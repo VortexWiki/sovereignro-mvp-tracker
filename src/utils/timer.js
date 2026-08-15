@@ -71,3 +71,30 @@ export const TIMER_STATUS_LABEL = {
     spawn_window: "🟡 Spawn Possible",
     spawned: "🟢 Spawned"
 };
+
+// Lets the user manually set "X minutes remaining" instead of only being
+// able to log a kill (Restart). Rather than storing a separate override
+// field, we back-solve for the killedAt timestamp that would produce
+// exactly this many minutes remaining right now — the rest of the timer
+// logic (getTimerStatus, getSecondsRemaining, the spawn_window alarm edge
+// detection) then keeps working unchanged, since it all still just reads
+// killedAt.
+//
+// Which boundary "minutes remaining" counts down to depends on the phase
+// the card is currently in: counting_down counts down to respawnMin (not
+// spawned yet), spawn_window counts down to respawnMax (fully spawned).
+// If the card has no kill logged yet (status "unknown"), we treat the
+// input as counting down to respawnMin, i.e. as if a kill just happened
+// respawnMin-minutesRemaining minutes ago — the most useful interpretation
+// when there's no existing timer to preserve the phase of.
+export function setMinutesRemaining(spawn, minutesRemaining, nowMs) {
+    if (spawn.respawnMin == null || spawn.respawnMax == null) {
+        return spawn.killedAt;
+    }
+
+    const status = getTimerStatus(spawn, nowMs);
+    const targetBoundaryMinutes = status === "spawn_window" ? spawn.respawnMax : spawn.respawnMin;
+
+    const elapsedMinutes = targetBoundaryMinutes - minutesRemaining;
+    return nowMs - elapsedMinutes * 60000;
+}

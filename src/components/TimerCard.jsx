@@ -7,16 +7,18 @@ import {
     Star,
     Square,
     StickyNote,
-    Info
+    Info,
+    Pencil
 } from "lucide-react";
 
 import { getPrimarySpawn } from "../utils/maps";
-import { getTimerStatus, getSecondsRemaining, formatClock, TIMER_STATUS_LABEL } from "../utils/timer";
+import { getTimerStatus, getSecondsRemaining, formatClock, setMinutesRemaining, TIMER_STATUS_LABEL } from "../utils/timer";
 import { triggerSpawnAlert } from "../utils/alarm";
 import MonsterSprite from "./MonsterSprite";
 import MapPopup from "./MapPopup";
 import NotePopup from "./NotePopup";
 import InfoPopup from "./InfoPopup";
+import EditTimerPopup from "./EditTimerPopup";
 
 import mvpBadge from "../assets/icons/mvp-badge.png";
 import minibossBadge from "../assets/icons/miniboss-badge.png";
@@ -51,6 +53,7 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
     const [mapPopupOpen, setMapPopupOpen] = useState(false);
     const [notePopupOpen, setNotePopupOpen] = useState(false);
     const [infoPopupOpen, setInfoPopupOpen] = useState(false);
+    const [editTimerPopupOpen, setEditTimerPopupOpen] = useState(false);
 
     // Which spawn (map) is currently displayed on this card. Defaults to the
     // same "best" spawn getPrimarySpawn would pick, but the user can switch
@@ -108,6 +111,14 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
 
     function handleRestartTimer() {
         updateActiveSpawn({ killedAt: Date.now() });
+    }
+
+    // Manual override: the user types how many minutes remain rather than
+    // logging an actual kill. Back-solves killedAt so the rest of the timer
+    // logic (status, countdown, spawn_window alarm) keeps working unchanged.
+    function handleSetMinutesRemaining(minutesRemaining) {
+        const newKilledAt = setMinutesRemaining(spawn, minutesRemaining, Date.now());
+        updateActiveSpawn({ killedAt: newKilledAt });
     }
 
     function handleStopTimer() {
@@ -229,6 +240,17 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
 
                 <button
                     type="button"
+                    className="timer-card-action"
+                    onClick={() => setEditTimerPopupOpen(true)}
+                    disabled={!hasRespawnData}
+                    aria-label="Edit timer"
+                    data-tooltip="Edit timer"
+                >
+                    <Pencil size={18} />
+                </button>
+
+                <button
+                    type="button"
                     className={`timer-card-action${mvp.isFavorite ? " timer-card-action--favorite" : ""}`}
                     onClick={onToggleFavorite}
                     aria-label={mvp.isFavorite ? "Remove from favorites" : "Move to favorites"}
@@ -296,6 +318,17 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
                 <InfoPopup
                     mvp={mvp}
                     onClose={() => setInfoPopupOpen(false)}
+                />
+
+            )}
+
+            {editTimerPopupOpen && (
+
+                <EditTimerPopup
+                    mvp={mvp}
+                    spawn={spawn}
+                    onSetMinutesRemaining={handleSetMinutesRemaining}
+                    onClose={() => setEditTimerPopupOpen(false)}
                 />
 
             )}

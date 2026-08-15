@@ -745,6 +745,45 @@
     background: var(--gold-strong);
 }
 
+/* --- Edit timer popup --- */
+
+.edit-timer-popup {
+    max-width: 340px;
+}
+
+.edit-timer-popup-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.edit-timer-popup-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.edit-timer-popup-input {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface-hover);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px 12px;
+}
+
+.edit-timer-popup-input:focus {
+    outline: none;
+    border-color: var(--gold-border);
+}
+
+.edit-timer-popup-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
 /* --- Info popup --- */
 
 .info-popup {

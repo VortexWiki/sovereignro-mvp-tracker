@@ -1,20 +1,18 @@
-import { useEffect, useRef, useState } from "react";
-import { Bell, Play, Upload, Trash2, AlertTriangle, BellRing, Download, CheckCircle2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Bell, Play, Trash2, AlertTriangle, BellRing, Download, CheckCircle2 } from "lucide-react";
 
 import { BUILTIN_SOUNDS } from "../utils/persistence";
 import { playSound, isNotificationSupported, getNotificationPermission, requestNotificationPermission } from "../utils/alarm";
 import { isInstallPromptAvailable, onInstallAvailabilityChange, isRunningStandalone, triggerInstallPrompt } from "../utils/pwaInstall";
 
-// Settings page: choose the spawn_window alarm sound (built-in bank or a
-// custom upload), toggle sound/notifications, adjust volume, and a
-// dangerous "reset everything" action that wipes IndexedDB. Preferences
-// live in the same Dexie database as the tracker data (see
-// utils/persistence.js) but are a separate key, since they're a
-// per-browser setting rather than something you'd want bundled into a
-// JSON backup you might restore on a different machine.
+// Settings page: choose the spawn_window alarm sound from a built-in bank,
+// toggle sound/notifications, adjust volume, and a dangerous "reset
+// everything" action that wipes IndexedDB. Preferences live in the same
+// Dexie database as the tracker data (see utils/persistence.js) but are a
+// separate key, since they're a per-browser setting rather than something
+// you'd want bundled into a JSON backup you might restore on a different
+// machine.
 export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
-    const fileInputRef = useRef(null);
-    const [uploadError, setUploadError] = useState(null);
     const [notifPermission, setNotifPermission] = useState(getNotificationPermission());
     const [resetConfirming, setResetConfirming] = useState(false);
     const [resetDone, setResetDone] = useState(false);
@@ -41,45 +39,7 @@ export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
     }
 
     function handlePreview(soundId) {
-        const previewPrefs = soundId === "custom" ? prefs : { ...prefs, soundId };
-        playSound({ ...previewPrefs, soundEnabled: true });
-    }
-
-    function handlePickFile() {
-        fileInputRef.current?.click();
-    }
-
-    function handleFileSelected(e) {
-        const file = e.target.files?.[0];
-        e.target.value = "";
-        if (!file) {
-            return;
-        }
-
-        setUploadError(null);
-
-        if (!file.type.startsWith("audio/")) {
-            setUploadError("Please choose an audio file.");
-            return;
-        }
-
-        // Under 2MB keeps the data URL small enough to live comfortably in
-        // IndexedDB alongside everything else.
-        if (file.size > 2 * 1024 * 1024) {
-            setUploadError("This file is too large (2MB max).");
-            return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = () => {
-            onUpdatePrefs({
-                soundId: "custom",
-                customSoundName: file.name,
-                customSoundDataUrl: reader.result
-            });
-        };
-        reader.onerror = () => setUploadError("Couldn't read this file.");
-        reader.readAsDataURL(file);
+        playSound({ ...prefs, soundId, soundEnabled: true });
     }
 
     async function handleEnableNotifications(checked) {
@@ -130,7 +90,7 @@ export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
 
                     <p className="backup-section-text">
                         Plays once when an MVP or mini-boss becomes Spawn
-                        Possible. Pick a sound below, or upload your own.
+                        Possible. Pick a sound below.
                     </p>
 
                     <label className="settings-toggle-row">
@@ -175,56 +135,7 @@ export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
 
                         ))}
 
-                        <div
-                            className={`settings-sound-option${prefs.soundId === "custom" ? " settings-sound-option--active" : ""}`}
-                        >
-
-                            <label className="settings-sound-label">
-                                <input
-                                    type="radio"
-                                    name="alarm-sound"
-                                    checked={prefs.soundId === "custom"}
-                                    onChange={() => prefs.customSoundDataUrl && onUpdatePrefs({ soundId: "custom" })}
-                                    disabled={!prefs.customSoundDataUrl}
-                                />
-                                <span>{prefs.customSoundName || "Custom (none uploaded)"}</span>
-                            </label>
-
-                            {prefs.customSoundDataUrl && (
-                                <button
-                                    type="button"
-                                    className="settings-sound-preview"
-                                    onClick={() => handlePreview("custom")}
-                                    aria-label="Preview custom sound"
-                                    data-tooltip="Preview"
-                                >
-                                    <Play size={14} />
-                                </button>
-                            )}
-
-                        </div>
-
                     </div>
-
-                    <button type="button" className="backup-action" onClick={handlePickFile}>
-                        <Upload size={16} />
-                        <span>Upload a custom sound</span>
-                    </button>
-
-                    <input
-                        ref={fileInputRef}
-                        type="file"
-                        accept="audio/*"
-                        onChange={handleFileSelected}
-                        style={{ display: "none" }}
-                    />
-
-                    {uploadError && (
-                        <p className="backup-message backup-message--error">
-                            <AlertTriangle size={15} />
-                            <span>{uploadError}</span>
-                        </p>
-                    )}
 
                     <div className="settings-volume-row">
                         <span>Volume</span>

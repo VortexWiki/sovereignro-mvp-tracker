@@ -1,24 +1,32 @@
 // Sound + browser notification helpers for the "Spawn Possible" alert.
 //
-// Sounds: a small built-in bank (bundled as real assets, imported below so
-// Vite fingerprints/bundles them properly) plus support for a user-uploaded
-// custom sound stored as a data URL in preferences (so it survives reload
-// without needing a separate file-storage layer).
+// Sounds: a built-in bank only (bundled as real assets, imported below so
+// Vite fingerprints/bundles them properly). No custom upload support —
+// keeping this to a curated bank avoids the format-compatibility issues
+// a user-provided file can run into (e.g. MIDI not playing through the
+// Audio element in most browsers).
 
 import chimeSound from "../assets/sounds/chime.mp3";
 import alarmSound from "../assets/sounds/alarm.mp3";
 import pingSound from "../assets/sounds/ping.mp3";
+import sirenSound from "../assets/sounds/siren.mp3";
+import klaxonSound from "../assets/sounds/klaxon.mp3";
+import buzzerSound from "../assets/sounds/buzzer.mp3";
+import bellSound from "../assets/sounds/bell.mp3";
+import arcadeSound from "../assets/sounds/arcade.mp3";
 
 const BUILTIN_SOUND_FILES = {
     chime: chimeSound,
     alarm: alarmSound,
-    ping: pingSound
+    ping: pingSound,
+    siren: sirenSound,
+    klaxon: klaxonSound,
+    buzzer: buzzerSound,
+    bell: bellSound,
+    arcade: arcadeSound
 };
 
 export function getSoundUrl(prefs) {
-    if (prefs.soundId === "custom" && prefs.customSoundDataUrl) {
-        return prefs.customSoundDataUrl;
-    }
     return BUILTIN_SOUND_FILES[prefs.soundId] || BUILTIN_SOUND_FILES.chime;
 }
 

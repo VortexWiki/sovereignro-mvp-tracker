@@ -175,13 +175,16 @@ export function importBackupJson(jsonText) {
 export const BUILTIN_SOUNDS = [
     { id: "chime", label: "Chime" },
     { id: "alarm", label: "Alarm" },
-    { id: "ping", label: "Ping" }
+    { id: "ping", label: "Ping" },
+    { id: "siren", label: "Siren" },
+    { id: "klaxon", label: "Klaxon" },
+    { id: "buzzer", label: "Buzzer" },
+    { id: "bell", label: "Bell" },
+    { id: "arcade", label: "Arcade beep" }
 ];
 
 const DEFAULT_PREFERENCES = {
     soundId: "chime",
-    customSoundName: null,
-    customSoundDataUrl: null,
     soundEnabled: true,
     notificationsEnabled: false,
     volume: 0.7

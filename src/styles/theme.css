@@ -1,0 +1,41 @@
+:root {
+
+    --bg: #010409;
+
+    --sidebar: #010409;
+
+    --surface: #050913;
+
+    --surface-hover: #0b1220;
+
+    --border: #1c2029;
+
+    --border-strong: #282c34;
+
+    --text: #F8FAFC;
+
+    --text-secondary: #8b93a3;
+
+    --text-muted: #4c525e;
+
+    --gold: #F5C336;
+
+    --gold-strong: #fade35;
+
+    --gold-line: #bd801e;
+
+    --gold-soft: rgba(245, 195, 54, 0.10);
+
+    --gold-border: rgba(245, 195, 54, 0.4);
+
+    --danger: #EF4444;
+
+    --warning: #F59E0B;
+
+    --success: #22C55E;
+
+    --pink: #EC4899;
+
+    --shadow: rgba(0, 0, 0, 0.5);
+
+}

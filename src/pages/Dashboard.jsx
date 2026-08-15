@@ -24,7 +24,8 @@ export default function Dashboard({
     removeFromActiveHunt,
     reorderActiveHunt,
     reorderFavorites,
-    alarmPrefs
+    alarmPrefs,
+    onNavigate
 }) {
     const sensors = useSensors(
         useSensor(PointerSensor, {
@@ -119,7 +120,12 @@ export default function Dashboard({
 
                         <h1>Dashboard</h1>
 
-                        <button className="icon-btn" aria-label="Notifications">
+                        <button
+                            className="icon-btn"
+                            aria-label="Notification settings"
+                            data-tooltip="Notification settings"
+                            onClick={() => onNavigate?.("settings")}
+                        >
                             <Bell size={19} />
                         </button>
 

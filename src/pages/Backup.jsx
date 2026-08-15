@@ -8,7 +8,7 @@ import { exportBackupJson, importBackupJson } from "../utils/persistence";
 // tracker to a different browser/computer, or keeping an off-browser copy
 // in case IndexedDB ever gets cleared (private browsing, "clear site data",
 // browser reinstall, etc).
-export default function Backup({ activeHunt, favorites, onRestore }) {
+export default function Backup({ activeHunt, favorites, onRestore, onNavigate }) {
     const fileInputRef = useRef(null);
     const [importError, setImportError] = useState(null);
     const [importSuccess, setImportSuccess] = useState(false);
@@ -85,7 +85,12 @@ export default function Backup({ activeHunt, favorites, onRestore }) {
 
                     <h1>Backup</h1>
 
-                    <button className="icon-btn" aria-label="Notifications">
+                    <button
+                        className="icon-btn"
+                        aria-label="Notification settings"
+                        data-tooltip="Notification settings"
+                        onClick={() => onNavigate?.("settings")}
+                    >
                         <Bell size={19} />
                     </button>
 

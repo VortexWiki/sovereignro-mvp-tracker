@@ -199,6 +199,7 @@ export default function App() {
                         isFavorited={isFavorited}
                         addMvp={addMvp}
                         addToFavorites={addToFavorites}
+                        onNavigate={setCurrentPage}
                     />
 
                 )}
@@ -212,6 +213,7 @@ export default function App() {
                             setActiveHunt(restored.activeHunt);
                             setFavorites(restored.favorites);
                         }}
+                        onNavigate={setCurrentPage}
                     />
 
                 )}
@@ -241,6 +243,7 @@ export default function App() {
                         reorderActiveHunt={reorderActiveHunt}
                         reorderFavorites={reorderFavorites}
                         alarmPrefs={prefs}
+                        onNavigate={setCurrentPage}
                     />
 
                 )}

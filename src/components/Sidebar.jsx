@@ -5,6 +5,8 @@ import {
     Settings,
 } from "lucide-react";
 
+import appLogo from "../assets/icons/app-logo.png";
+
 const NAV_ITEMS = [
     { label: "Dashboard", icon: LayoutDashboard, page: "dashboard" },
     { label: "Monster List", icon: ListTree, page: "monsters" },
@@ -17,7 +19,7 @@ export default function Sidebar({ currentPage, onNavigate }) {
         <aside className="sidebar">
 
             <div className="sidebar-header">
-                <h1>RO MVP Tracker</h1>
+                <img src={appLogo} alt="SovereignRO MVP Tracker" className="sidebar-logo" />
             </div>
 
             <nav className="sidebar-nav">

@@ -10,7 +10,7 @@ import MonsterSprite from "../components/MonsterSprite";
 // while typing and adds straight to Active Hunt), this page is meant for
 // browsing the whole roster and adding to either Active Hunt or Favorites
 // directly, without needing to know a name to search for first.
-export default function MonsterList({ isTracked, isFavorited, addMvp, addToFavorites }) {
+export default function MonsterList({ isTracked, isFavorited, addMvp, addToFavorites, onNavigate }) {
     const [query, setQuery] = useState("");
     const [filter, setFilter] = useState("all"); // "all" | "mvp" | "miniboss"
 
@@ -30,7 +30,12 @@ export default function MonsterList({ isTracked, isFavorited, addMvp, addToFavor
 
                     <h1>Monster List</h1>
 
-                    <button className="icon-btn" aria-label="Notifications">
+                    <button
+                        className="icon-btn"
+                        aria-label="Notification settings"
+                        data-tooltip="Notification settings"
+                        onClick={() => onNavigate?.("settings")}
+                    >
                         <Bell size={19} />
                     </button>
 

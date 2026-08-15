@@ -78,7 +78,7 @@ export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
 
                     <h1>Settings</h1>
 
-                    <button className="icon-btn" aria-label="Notifications">
+                    <button className="icon-btn" aria-label="Notification settings" disabled>
                         <Bell size={19} />
                     </button>
 

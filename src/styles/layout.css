@@ -55,3 +55,13 @@
     background: var(--surface);
     border-color: var(--gold-border);
 }
+
+.icon-btn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.icon-btn:disabled:hover {
+    background: transparent;
+    border-color: var(--border-strong);
+}

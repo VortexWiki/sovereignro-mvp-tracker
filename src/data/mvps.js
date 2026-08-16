@@ -147,6 +147,127 @@ import odinTem03 from "../assets/maps/odin_tem03.webp";
 import boneDetardeurusSprite from "../assets/sprites/20618.gif";
 import abyss04 from "../assets/maps/abyss_04.png";
 
+import gloomUnderNightSprite from "../assets/sprites/1768.gif";
+import raSan05 from "../assets/maps/ra_san05.webp";
+
+import ktullanuxSprite from "../assets/sprites/1779.gif";
+import iceDun03 from "../assets/maps/ice_dun03.webp";
+
+import atroceSprite from "../assets/sprites/1785.gif";
+import gldDun03_2 from "../assets/maps/gld_dun03_2.webp";
+import raFild03 from "../assets/maps/ra_fild03.webp";
+import raFild04 from "../assets/maps/ra_fild04.webp";
+import veFild01 from "../assets/maps/ve_fild01.webp";
+import veFild02 from "../assets/maps/ve_fild02.webp";
+
+import ifritSprite from "../assets/sprites/1832.gif";
+import thorV03 from "../assets/maps/thor_v03.webp";
+
+import fallingBishopSprite from "../assets/sprites/1871.gif";
+import abbey02 from "../assets/maps/abbey02.webp";
+
+import beelzebubSprite from "../assets/sprites/1874.gif";
+import abbey03 from "../assets/maps/abbey03.png";
+
+import gopinichSprite from "../assets/sprites/1885.gif";
+import moskDun03 from "../assets/maps/mosk_dun03.webp";
+
+import woundedMoroccSprite from "../assets/sprites/1917.gif";
+import mocFild22 from "../assets/maps/moc_fild22.webp";
+
+import naghtSiegerSprite from "../assets/sprites/1956.gif";
+import tower6 from "../assets/maps/6@tower.webp";
+
+import entweihenCrothenSprite from "../assets/sprites/1957.gif";
+import tower5 from "../assets/maps/5@tower.webp";
+
+import nidhoggrsShadowSprite from "../assets/sprites/2022.gif";
+import nyd2 from "../assets/maps/2@nyd.webp";
+
+import boitataSprite from "../assets/sprites/2068.gif";
+import braDun02 from "../assets/maps/bra_dun02.webp";
+
+import queenScarabaSprite from "../assets/sprites/2087.gif";
+import dicDun02 from "../assets/maps/dic_dun02.webp";
+
+import lostDragonSprite from "../assets/sprites/2131.gif";
+import mist1 from "../assets/maps/1@mist.webp";
+
+import leakSprite from "../assets/sprites/2156.gif";
+import dewDun01 from "../assets/maps/dew_dun01.webp";
+
+import goldQueenScarabaSprite from "../assets/sprites/2165.gif";
+import dicDun03 from "../assets/maps/dic_dun03.webp";
+
+import darkCoelacanthSprite from "../assets/sprites/2187.gif";
+import pump1 from "../assets/maps/1@pump.webp";
+
+import giantOctopusSprite from "../assets/sprites/2194.gif";
+import cash1 from "../assets/maps/1@cash.webp";
+
+import krakenSprite from "../assets/sprites/2202.gif";
+import izDun05 from "../assets/maps/iz_dun05.webp";
+
+import paladinRandelSprite from "../assets/sprites/2235.gif";
+import creatorFlamelSprite from "../assets/sprites/2236.gif";
+import professorCeliaSprite from "../assets/sprites/2237.gif";
+import championChenSprite from "../assets/sprites/2238.gif";
+import stalkerGertieSprite from "../assets/sprites/2239.gif";
+import clownAlphoccioSprite from "../assets/sprites/2240.gif";
+import gypsyTrentiniSprite from "../assets/sprites/2241.gif";
+import lhzDun04 from "../assets/maps/lhz_dun04.webp";
+
+import pyurielSprite from "../assets/sprites/2249.gif";
+import gld2Prt from "../assets/maps/gld2_prt.webp";
+
+import gioiaSprite from "../assets/sprites/2251.gif";
+import gld2Ald from "../assets/maps/gld2_ald.webp";
+
+import elviraSprite from "../assets/sprites/2252.gif";
+
+import daehyonSprite from "../assets/sprites/2253.gif";
+import gld2Pay from "../assets/maps/gld2_pay.webp";
+
+import soheonSprite from "../assets/sprites/2254.gif";
+
+import kadesSprite from "../assets/sprites/2255.gif";
+import gld2Gef from "../assets/maps/gld2_gef.webp";
+
+import rudoSprite from "../assets/sprites/2256.gif";
+
+import buwayaSprite from "../assets/sprites/2319.gif";
+import maC1 from "../assets/maps/1@ma_c.webp";
+
+import bangungotSprite from "../assets/sprites/2327.gif";
+import maH1 from "../assets/maps/1@ma_h.webp";
+
+import amonRaNightmareSprite from "../assets/sprites/2362.gif";
+import mocPrydn2 from "../assets/maps/moc_prydn2.webp";
+
+import theLastOneSprite from "../assets/sprites/2441.gif";
+import tegDun01 from "../assets/maps/teg_dun01.webp";
+
+import kingOfTheAlleySprite from "../assets/sprites/2442.gif";
+import tegDun02 from "../assets/maps/teg_dun02.webp";
+
+import corruptedSoulSprite from "../assets/sprites/2475.gif";
+import glK1 from "../assets/maps/1@gl_k.webp";
+
+import amdaraisSprite from "../assets/sprites/2476.gif";
+import glK2 from "../assets/maps/2@gl_k.webp";
+
+import baphometNightmareSprite from "../assets/sprites/2483.gif";
+import glCas02_ from "../assets/maps/gl_cas02_.webp";
+
+import facewormQueenSprite from "../assets/sprites/2529.gif";
+import face1 from "../assets/maps/1@face.webp";
+
+import geffenFenrirSprite from "../assets/sprites/2564.gif";
+import geSt1 from "../assets/maps/1@ge_st.webp";
+
+import evilFanaticsSprite from "../assets/sprites/2942.gif";
+import tnm3_1 from "../assets/maps/1@tnm3.webp";
+
 const mvps = [
     {
         id: 1038,
@@ -826,6 +947,767 @@ const mvps = [
                 respawnMin: 180,
                 respawnMax: 190,
                 mapImage: abyss04
+            }
+        ]
+    },
+    {
+        id: 1768,
+        name: "Gloom Under Night",
+        sprite: gloomUnderNightSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1768",
+        spawns: [
+            {
+                map: "ra_san05",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 310,
+                mapImage: raSan05
+            }
+        ]
+    },
+    {
+        id: 1779,
+        name: "Ktullanux",
+        sprite: ktullanuxSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1779",
+        specialCondition: "Ice Necklace Quest: https://irowiki.org/wiki/Ice_Necklace_Quest",
+        spawns: [
+            {
+                map: "ice_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: iceDun03
+            }
+        ]
+    },
+    {
+        id: 1785,
+        name: "Atroce",
+        sprite: atroceSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1785",
+        spawns: [
+            {
+                map: "gld_dun03_2",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gldDun03_2
+            },
+            {
+                map: "ra_fild03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 180,
+                respawnMax: 190,
+                mapImage: raFild03
+            },
+            {
+                map: "ra_fild04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 310,
+                mapImage: raFild04
+            },
+            {
+                map: "ve_fild01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 180,
+                respawnMax: 190,
+                mapImage: veFild01
+            },
+            {
+                map: "ve_fild02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 370,
+                mapImage: veFild02
+            }
+        ]
+    },
+    {
+        id: 1832,
+        name: "Ifrit",
+        sprite: ifritSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1832",
+        spawns: [
+            {
+                map: "thor_v03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 660,
+                respawnMax: 670,
+                mapImage: thorV03
+            }
+        ]
+    },
+    {
+        id: 1871,
+        name: "Falling Bishop",
+        sprite: fallingBishopSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1871",
+        spawns: [
+            {
+                map: "abbey02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: abbey02
+            }
+        ]
+    },
+    {
+        id: 1874,
+        name: "Beelzebub",
+        sprite: beelzebubSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1874",
+        specialCondition: "Beelzebub (Fly Form) must transform into Phase 2.",
+        spawns: [
+            {
+                map: "abbey03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 720,
+                respawnMax: 730,
+                mapImage: abbey03
+            }
+        ]
+    },
+    {
+        id: 1885,
+        name: "Gopinich",
+        sprite: gopinichSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1885",
+        spawns: [
+            {
+                map: "mosk_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: moskDun03
+            }
+        ]
+    },
+    {
+        id: 1917,
+        name: "Wounded Morocc",
+        sprite: woundedMoroccSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1917",
+        spawns: [
+            {
+                map: "moc_fild22",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 720,
+                respawnMax: 730,
+                mapImage: mocFild22
+            }
+        ]
+    },
+    {
+        id: 1956,
+        name: "Naght Sieger",
+        sprite: naghtSiegerSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1956",
+        specialCondition: "Endless Tower final boss",
+        spawns: [
+            {
+                map: "6@tower",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: tower6
+            }
+        ]
+    },
+    {
+        id: 1957,
+        name: "Entweihen Crothen",
+        sprite: entweihenCrothenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1957",
+        specialCondition: "Endless Tower boss",
+        spawns: [
+            {
+                map: "5@tower",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: tower5
+            }
+        ]
+    },
+    {
+        id: 2022,
+        name: "Nidhoggr's Shadow",
+        sprite: nidhoggrsShadowSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2022",
+        specialCondition: "Nidhoggur's Nest (Level 2) Instance Map",
+        spawns: [
+            {
+                map: "2@nyd",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: nyd2
+            }
+        ]
+    },
+    {
+        id: 2068,
+        name: "Boitata",
+        sprite: boitataSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2068",
+        spawns: [
+            {
+                map: "bra_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: braDun02
+            }
+        ]
+    },
+    {
+        id: 2087,
+        name: "Queen Scaraba",
+        sprite: queenScarabaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2087",
+        spawns: [
+            {
+                map: "dic_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: dicDun02
+            }
+        ]
+    },
+    {
+        id: 2131,
+        name: "Lost Dragon",
+        sprite: lostDragonSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2131",
+        specialCondition: "The Hazy Maze Forest Instance Map",
+        spawns: [
+            {
+                map: "1@mist",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: mist1
+            }
+        ]
+    },
+    {
+        id: 2156,
+        name: "Leak",
+        sprite: leakSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2156",
+        spawns: [
+            {
+                map: "dew_dun01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: dewDun01
+            }
+        ]
+    },
+    {
+        id: 2165,
+        name: "Gold Queen Scaraba",
+        sprite: goldQueenScarabaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2165",
+        specialCondition: "Quest needed: Hall's admission requires Scaraba Perfume. Curious Sapha (dic_dun01 266/113) sells perfume in Kamidal Tunnel.\nEntrance gatekeeper is Dirty Vigilante (dic_dun0 284/102), next to the normal Scaraba gatekeeper.",
+        spawns: [
+            {
+                map: "dic_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: dicDun03
+            }
+        ]
+    },
+    {
+        id: 2187,
+        name: "Dark Coelacanth",
+        sprite: darkCoelacanthSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2187",
+        specialCondition: "Drain 1 (1@pump) Instance Map",
+        spawns: [
+            {
+                map: "1@pump",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: pump1
+            }
+        ]
+    },
+    {
+        id: 2194,
+        name: "Giant Octopus",
+        sprite: giantOctopusSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2194",
+        specialCondition: "Octopus Cave (1@cash) Instance Map",
+        spawns: [
+            {
+                map: "1@cash",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: cash1
+            }
+        ]
+    },
+    {
+        id: 2202,
+        name: "Kraken",
+        sprite: krakenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2202",
+        spawns: [
+            {
+                map: "iz_dun05",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 150,
+                mapImage: izDun05
+            }
+        ]
+    },
+    {
+        id: 2235,
+        name: "Paladin Randel",
+        sprite: paladinRandelSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2235",
+        spawns: [
+            {
+                map: "lhz_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun04
+            }
+        ]
+    },
+    {
+        id: 2236,
+        name: "Creator Flamel",
+        sprite: creatorFlamelSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2236",
+        spawns: [
+            {
+                map: "lhz_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun04
+            }
+        ]
+    },
+    {
+        id: 2237,
+        name: "Professor Celia",
+        sprite: professorCeliaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2237",
+        spawns: [
+            {
+                map: "lhz_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun04
+            }
+        ]
+    },
+    {
+        id: 2238,
+        name: "Champion Chen",
+        sprite: championChenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2238",
+        spawns: [
+            {
+                map: "lhz_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun04
+            }
+        ]
+    },
+    {
+        id: 2239,
+        name: "Stalker Gertie",
+        sprite: stalkerGertieSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2239",
+        spawns: [
+            {
+                map: "lhz_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun04
+            }
+        ]
+    },
+    {
+        id: 2240,
+        name: "Clown Alphoccio",
+        sprite: clownAlphoccioSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2240",
+        spawns: [
+            {
+                map: "lhz_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun04
+            }
+        ]
+    },
+    {
+        id: 2241,
+        name: "Gypsy Trentini",
+        sprite: gypsyTrentiniSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2241",
+        spawns: [
+            {
+                map: "lhz_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun04
+            }
+        ]
+    },
+    {
+        id: 2249,
+        name: "Pyuriel",
+        sprite: pyurielSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2249",
+        specialCondition: "Hall of the Abyss: Warrior road",
+        spawns: [
+            {
+                map: "gld2_prt",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gld2Prt
+            }
+        ]
+    },
+    {
+        id: 2251,
+        name: "Gioia",
+        sprite: gioiaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2251",
+        specialCondition: "Hall of the Abyss: Tear of Hero",
+        spawns: [
+            {
+                map: "gld2_ald",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gld2Ald
+            }
+        ]
+    },
+    {
+        id: 2252,
+        name: "Elvira",
+        sprite: elviraSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2252",
+        specialCondition: "Hall of the Abyss: Tear of Hero",
+        spawns: [
+            {
+                map: "gld2_ald",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 30,
+                respawnMax: 40,
+                mapImage: gld2Ald
+            }
+        ]
+    },
+    {
+        id: 2253,
+        name: "Daehyon",
+        sprite: daehyonSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2253",
+        specialCondition: "Hall of the Abyss: Wind of beginning",
+        spawns: [
+            {
+                map: "gld2_pay",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gld2Pay
+            }
+        ]
+    },
+    {
+        id: 2254,
+        name: "Soheon",
+        sprite: soheonSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2254",
+        specialCondition: "Hall of the Abyss: Wind of beginning",
+        spawns: [
+            {
+                map: "gld2_pay",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 30,
+                respawnMax: 40,
+                mapImage: gld2Pay
+            }
+        ]
+    },
+    {
+        id: 2255,
+        name: "Kades",
+        sprite: kadesSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2255",
+        specialCondition: "Hall of the Abyss: Hill of death",
+        spawns: [
+            {
+                map: "gld2_gef",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gld2Gef
+            }
+        ]
+    },
+    {
+        id: 2256,
+        name: "Rudo",
+        sprite: rudoSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2256",
+        specialCondition: "Hall of the Abyss: Hill of death",
+        spawns: [
+            {
+                map: "gld2_gef",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 30,
+                respawnMax: 40,
+                mapImage: gld2Gef
+            }
+        ]
+    },
+    {
+        id: 2319,
+        name: "Buwaya",
+        sprite: buwayaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2319",
+        specialCondition: "Buwaya Cave (1@ma_c) Instance Map",
+        spawns: [
+            {
+                map: "1@ma_c",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: maC1
+            }
+        ]
+    },
+    {
+        id: 2327,
+        name: "Bangungot",
+        sprite: bangungotSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2327",
+        specialCondition: "Malaya Bangungot Hospital 2F (1@ma_h) Instance Map",
+        spawns: [
+            {
+                map: "1@ma_h",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: maH1
+            }
+        ]
+    },
+    {
+        id: 2362,
+        name: "Amon Ra (Nightmare)",
+        sprite: amonRaNightmareSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2362",
+        spawns: [
+            {
+                map: "moc_prydn2",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: mocPrydn2
+            }
+        ]
+    },
+    {
+        id: 2441,
+        name: "The Last One",
+        sprite: theLastOneSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2441",
+        specialCondition: "TE Subterranean Guild Dungeon",
+        spawns: [
+            {
+                map: "teg_dun01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 480,
+                mapImage: tegDun01
+            }
+        ]
+    },
+    {
+        id: 2442,
+        name: "King of the Alley",
+        sprite: kingOfTheAlleySprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2442",
+        specialCondition: "TE Subterranean Guild Dungeon",
+        spawns: [
+            {
+                map: "teg_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: tegDun02
+            }
+        ]
+    },
+    {
+        id: 2475,
+        name: "Corrupted Soul",
+        sprite: corruptedSoulSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2475",
+        specialCondition: "Old Glast Heim Chivalry 2F (1@gl_k) Instance Map",
+        spawns: [
+            {
+                map: "1@gl_k",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: glK1
+            }
+        ]
+    },
+    {
+        id: 2476,
+        name: "Amdarais",
+        sprite: amdaraisSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2476",
+        specialCondition: "Old Glast Heim Chivalry 1F (2@gl_k) Instance Map",
+        spawns: [
+            {
+                map: "2@gl_k",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: glK2
+            }
+        ]
+    },
+    {
+        id: 2483,
+        name: "Baphomet (Nightmare)",
+        sprite: baphometNightmareSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2483",
+        spawns: [
+            {
+                map: "gl_cas02_",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: glCas02_
+            }
+        ]
+    },
+    {
+        id: 2529,
+        name: "Faceworm Queen",
+        sprite: facewormQueenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2529",
+        specialCondition: "Faceworm's Nest (1@face) Instance Map",
+        spawns: [
+            {
+                map: "1@face",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: face1
+            }
+        ]
+    },
+    {
+        id: 2564,
+        name: "Geffen Fenrir",
+        sprite: geffenFenrirSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2564",
+        specialCondition: "Geffen Magic Tournament (1@ge_st) Instance Map",
+        spawns: [
+            {
+                map: "1@ge_st",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: geSt1
+            }
+        ]
+    },
+    {
+        id: 2942,
+        name: "Evil Fanatics",
+        sprite: evilFanaticsSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2942",
+        specialCondition: "Morroc Castle - Basement (1@tnm3) Instance Map",
+        spawns: [
+            {
+                map: "1@tnm3",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: tnm3_1
             }
         ]
     },

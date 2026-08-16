@@ -38,6 +38,18 @@ import arcAngelingSprite from "../assets/sprites/1388.gif";
 
 import devilingSprite from "../assets/sprites/1582.gif";
 
+import valkyrieSprite from "../assets/sprites/1765.gif";
+import odinTem03 from "../assets/maps/odin_tem03.webp";
+
+import hardrockMammothSprite from "../assets/sprites/1990.gif";
+import manFild03 from "../assets/maps/man_fild03.webp";
+
+import tendrillionSprite from "../assets/sprites/1991.gif";
+import splFild03 from "../assets/maps/spl_fild03.webp";
+
+import loraSprite from "../assets/sprites/2250.gif";
+import gld2Prt from "../assets/maps/gld2_prt.webp";
+
 const minibosses = [
     {
         id: 1089,
@@ -276,6 +288,72 @@ const minibosses = [
                 respawnMin: 60,
                 respawnMax: 70,
                 mapImage: yunoFild04
+            }
+        ]
+    },
+    {
+        id: 1765,
+        name: "Valkyrie",
+        sprite: valkyrieSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1765",
+        spawns: [
+            {
+                map: "odin_tem03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 90,
+                respawnMax: 120,
+                mapImage: odinTem03
+            }
+        ]
+    },
+    {
+        id: 1990,
+        name: "Hardrock Mammoth",
+        sprite: hardrockMammothSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1990",
+        spawns: [
+            {
+                map: "man_fild03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 240,
+                respawnMax: 240,
+                mapImage: manFild03
+            }
+        ]
+    },
+    {
+        id: 1991,
+        name: "Tendrillion",
+        sprite: tendrillionSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1991",
+        specialCondition: "2x",
+        spawns: [
+            {
+                map: "spl_fild03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 60,
+                mapImage: splFild03
+            }
+        ]
+    },
+    {
+        id: 2250,
+        name: "Lora",
+        sprite: loraSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2250",
+        specialCondition: "Hall of the Abyss: Warrior road",
+        spawns: [
+            {
+                map: "gld2_prt",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 30,
+                respawnMax: 40,
+                mapImage: gld2Prt
             }
         ]
     },

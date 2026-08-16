@@ -35,7 +35,6 @@ import gldDun04_2 from "../assets/maps/gld_dun04_2.webp";
 import gld2Gef from "../assets/maps/gld2_gef.webp";
 
 import arcAngelingSprite from "../assets/sprites/1388.gif";
-import yunoFild04 from "../assets/maps/yuno_fild04.webp";
 
 import devilingSprite from "../assets/sprites/1582.gif";
 

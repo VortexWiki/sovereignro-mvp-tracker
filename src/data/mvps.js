@@ -144,6 +144,9 @@ import khDun02 from "../assets/maps/kh_dun02.webp";
 import valkyrieRandgrisSprite from "../assets/sprites/1751.gif";
 import odinTem03 from "../assets/maps/odin_tem03.webp";
 
+import boneDetardeurusSprite from "../assets/sprites/20618.gif";
+import abyss04 from "../assets/maps/abyss_04.png";
+
 const mvps = [
     {
         id: 1038,
@@ -807,6 +810,22 @@ const mvps = [
                 respawnMin: 480,
                 respawnMax: 490,
                 mapImage: odinTem03
+            }
+        ]
+    },
+    {
+        id: 20618,
+        name: "Bone Detardeurus",
+        sprite: boneDetardeurusSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20618",
+        spawns: [
+            {
+                map: "abyss_04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 180,
+                respawnMax: 190,
+                mapImage: abyss04
             }
         ]
     },

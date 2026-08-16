@@ -893,9 +893,14 @@
     padding: 18px;
     font-size: 14px;
     line-height: 1.6;
-    color: var(--text-secondary);
+    color: var(--gold);
     white-space: pre-wrap;
     overflow-y: auto;
+}
+
+.info-popup-body strong {
+    font-weight: 700;
+    color: var(--gold-strong);
 }
 
 /* --- Footer --- */

@@ -4,6 +4,20 @@ import { X } from "lucide-react";
 
 import MonsterNameLink from "./MonsterNameLink";
 
+// Renders cardEffect/specialCondition text, honoring a simple **bold**
+// markup (easy to type in the source spreadsheet) — everything else is
+// plain text, line breaks handled by the container's white-space: pre-wrap.
+// Not a full markdown parser on purpose: this only ever needs bold spans.
+function renderWithBold(text) {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+            return <strong key={i}>{part.slice(2, -2)}</strong>;
+        }
+        return part;
+    });
+}
+
 // Popup for extra static info about a MVP that isn't a simple respawn
 // timer — e.g. some MVPs only spawn after a kill-count threshold on their
 // map, or the map itself has a special mechanic/effect. Two tabs: "Card
@@ -75,7 +89,7 @@ export default function InfoPopup({ mvp, onClose }) {
 
                 <div className="info-popup-body">
 
-                    {tab === "cardEffect" ? cardEffect : specialCondition}
+                    {renderWithBold(tab === "cardEffect" ? cardEffect : specialCondition)}
 
                 </div>
 

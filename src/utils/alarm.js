@@ -100,21 +100,48 @@ export async function requestNotificationPermission() {
 // Fires a Windows/OS-level toast notification if the user opted in and
 // permission is granted. Silently does nothing otherwise (the in-app glow
 // + sound already cover that case).
-export function notifySpawnPossible(mvpName, mapName, prefs) {
+//
+// Once this app is installed as a PWA (standalone window) with an active
+// service worker, Chrome/Edge on Windows refuse the direct
+// `new Notification(...)` constructor — it throws "Illegal constructor"
+// (silently swallowed by the old try/catch here, which is why toasts never
+// showed up once installed even though permission was granted). The fix is
+// to go through the service worker registration's showNotification()
+// instead, which works both in a normal tab (no SW needed there either)
+// and in the installed PWA. navigator.serviceWorker.ready resolves once
+// registration is active, which main.jsx kicks off on load.
+export async function notifySpawnPossible(mvpName, mapName, prefs) {
     if (!prefs.notificationsEnabled) {
         return;
     }
     if (!isNotificationSupported() || Notification.permission !== "granted") {
         return;
     }
+
+    const title = "Spawn Possible";
+    const options = {
+        body: `${mvpName} can now spawn (${mapName}).`,
+        tag: `spawn-${mvpName}`
+    };
+
     try {
-        new Notification("Spawn Possible", {
-            body: `${mvpName} can now spawn (${mapName}).`,
-            tag: `spawn-${mvpName}`
-        });
+        if ("serviceWorker" in navigator) {
+            const registration = await navigator.serviceWorker.ready;
+            await registration.showNotification(title, options);
+            return;
+        }
+        // No service worker support at all (very old browser) — fall back
+        // to the direct constructor, which at least works in a plain tab.
+        new Notification(title, options);
     } catch (err) {
-        // Some environments (e.g. no active service worker yet on first
-        // load) can throw here — not worth surfacing to the user.
+        // Belt and suspenders: if showNotification itself throws for some
+        // other reason, try the direct constructor as a last resort rather
+        // than silently doing nothing.
+        try {
+            new Notification(title, options);
+        } catch (err2) {
+            // Nothing more we can do without surfacing a confusing error.
+        }
     }
 }
 

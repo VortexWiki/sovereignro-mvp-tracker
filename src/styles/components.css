@@ -214,6 +214,7 @@
 }
 
 .favorite-card {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -242,6 +243,11 @@
 
 .favorite-card-info {
     min-width: 0;
+    /* Room for the star button, which now sits absolutely positioned in
+       the bottom-right corner instead of inline at the end of this flex
+       row — without this, a long monster name's ellipsis could still run
+       right up under the button. */
+    padding-right: 28px;
 }
 
 .favorite-card-name {
@@ -260,10 +266,12 @@
 }
 
 .favorite-card-remove {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
     padding: 6px;
     border-radius: 8px;
     border: none;

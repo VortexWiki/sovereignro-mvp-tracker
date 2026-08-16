@@ -74,6 +74,10 @@ export default function FavoriteCard({ mvp, onMoveToActiveHunt, onRemoveFromFavo
 
             </div>
 
+            {/* Bottom-right corner, out of the name/map text's flow — a
+                long monster name (e.g. "Gold Queen Scaraba") would
+                otherwise butt right up against this button when it sat
+                inline in the flex row. */}
             <button
                 type="button"
                 className="favorite-card-remove"

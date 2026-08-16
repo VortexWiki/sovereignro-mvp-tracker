@@ -47,6 +47,37 @@ import doppelgangerSprite from "../assets/sprites/1046.gif";
 import gefDun02 from "../assets/maps/gef_dun02.webp";
 import gldDun04 from "../assets/maps/gld_dun04.webp";
 
+import mistressSprite from "../assets/sprites/1059.gif";
+import gldDun02 from "../assets/maps/gld_dun02.webp";
+import mjolnir04 from "../assets/maps/mjolnir_04.webp";
+
+import goldenThiefBugSprite from "../assets/sprites/1086.gif";
+import prtSewb4 from "../assets/maps/prt_sewb4.webp";
+
+import orcHeroSprite from "../assets/sprites/1087.gif";
+import gefFild03 from "../assets/maps/gef_fild03.webp";
+
+import drakeSprite from "../assets/sprites/1112.gif";
+import treasure02 from "../assets/maps/treasure02.webp";
+
+import eddgaSprite from "../assets/sprites/1115.gif";
+import gldDun01_2 from "../assets/maps/gld_dun01_2.webp";
+import payFild10 from "../assets/maps/pay_fild10.webp";
+
+import mayaSprite from "../assets/sprites/1147.gif";
+import anthell02 from "../assets/maps/anthell02.webp";
+import gldDun02_2 from "../assets/maps/gld_dun02_2.webp";
+
+import moonlightFlowerSprite from "../assets/sprites/1150.gif";
+import gldDun01 from "../assets/maps/gld_dun01.webp";
+import payDun04 from "../assets/maps/pay_dun04.webp";
+
+import pharaohSprite from "../assets/sprites/1157.gif";
+import inSphinx5 from "../assets/maps/in_sphinx5.webp";
+
+import phreeoniSprite from "../assets/sprites/1159.gif";
+import mocFild17 from "../assets/maps/moc_fild17.webp";
+
 const mvps = [
     {
         id: 1038,
@@ -58,8 +89,8 @@ const mvps = [
                 map: "moc_pryd04",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 120,
-                respawnMax: 130,
+                respawnMin: 60,
+                respawnMax: 70,
                 mapImage: mocPryd04
             }
         ]
@@ -74,8 +105,8 @@ const mvps = [
                 map: "prt_maze03",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 120,
-                respawnMax: 130,
+                respawnMin: 60,
+                respawnMax: 70,
                 mapImage: prtMaze03
             },
             {
@@ -106,8 +137,8 @@ const mvps = [
                 map: "gef_dun02",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 120,
-                respawnMax: 130,
+                respawnMin: 60,
+                respawnMax: 70,
                 mapImage: gefDun02
             },
             {
@@ -115,8 +146,192 @@ const mvps = [
                 mapType: "open_world",
                 special: null,
                 respawnMin: 480,
-                respawnMax: 480,
+                respawnMax: 490,
                 mapImage: gldDun04
+            }
+        ]
+    },
+    {
+        id: 1059,
+        name: "Mistress",
+        sprite: mistressSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1059",
+        spawns: [
+            {
+                map: "gld_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gldDun02
+            },
+            {
+                map: "mjolnir_04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: mjolnir04
+            }
+        ]
+    },
+    {
+        id: 1086,
+        name: "Golden Thief Bug",
+        sprite: goldenThiefBugSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1086",
+        spawns: [
+            {
+                map: "prt_sewb4",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: prtSewb4
+            }
+        ]
+    },
+    {
+        id: 1087,
+        name: "Orc Hero",
+        sprite: orcHeroSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1087",
+        spawns: [
+            {
+                map: "gef_fild03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: gefFild03
+            }
+        ]
+    },
+    {
+        id: 1112,
+        name: "Drake",
+        sprite: drakeSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1112",
+        spawns: [
+            {
+                map: "treasure02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: treasure02
+            }
+        ]
+    },
+    {
+        id: 1115,
+        name: "Eddga",
+        sprite: eddgaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1115",
+        spawns: [
+            {
+                map: "gld_dun01_2",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gldDun01_2
+            },
+            {
+                map: "pay_fild10",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: payFild10
+            }
+        ]
+    },
+    {
+        id: 1147,
+        name: "Maya",
+        sprite: mayaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1147",
+        spawns: [
+            {
+                map: "anthell02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: anthell02
+            },
+            {
+                map: "gld_dun02_2",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gldDun02_2
+            },
+            {
+                map: "gld_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gldDun02
+            }
+        ]
+    },
+    {
+        id: 1150,
+        name: "Moonlight Flower",
+        sprite: moonlightFlowerSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1150",
+        spawns: [
+            {
+                map: "gld_dun01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gldDun01
+            },
+            {
+                map: "pay_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: payDun04
+            }
+        ]
+    },
+    {
+        id: 1157,
+        name: "Pharaoh",
+        sprite: pharaohSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1157",
+        spawns: [
+            {
+                map: "in_sphinx5",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: inSphinx5
+            }
+        ]
+    },
+    {
+        id: 1159,
+        name: "Phreeoni",
+        sprite: phreeoniSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1159",
+        spawns: [
+            {
+                map: "moc_fild17",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: mocFild17
             }
         ]
     },

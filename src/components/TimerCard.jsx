@@ -24,7 +24,7 @@ import EditTimerPopup from "./EditTimerPopup";
 import mvpBadge from "../assets/icons/mvp-badge.png";
 import minibossBadge from "../assets/icons/miniboss-badge.png";
 
-export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, alarmPrefs }) {
+export default function TimerCard({ mvp, onUpdateMvp, onSaveNote, onStop, onToggleFavorite, alarmPrefs }) {
 
     // The star button toggles isFavorite. Turning it on moves the card to
     // Favorites immediately (there's no "starred but still in Active Hunt"
@@ -152,14 +152,19 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
         onUpdateMvp({ ...mvp, spawns: updatedSpawns });
     }
 
-    // Note is per-MVP, not per-spawn — it travels with the card no matter
-    // which map is currently displayed.
+    // Note is per-MVP (keyed by monster id in App's monsterNotes store),
+    // not per-spawn and not part of this card's tracked-entry data — it's
+    // the same note whether shown here, on a FavoriteCard, or on the
+    // Monster List row for this monster. Delegates straight to the
+    // onSaveNote callback wired up in App/ActiveHunt rather than going
+    // through onUpdateMvp, so it stays in sync everywhere instead of living
+    // only on this tracked entry.
     function handleSaveNote(text) {
-        if (!onUpdateMvp) {
+        if (!onSaveNote) {
             return;
         }
 
-        onUpdateMvp({ ...mvp, note: text });
+        onSaveNote(text);
     }
 
     return (

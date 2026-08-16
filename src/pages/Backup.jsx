@@ -8,13 +8,13 @@ import { exportBackupJson, importBackupJson } from "../utils/persistence";
 // tracker to a different browser/computer, or keeping an off-browser copy
 // in case IndexedDB ever gets cleared (private browsing, "clear site data",
 // browser reinstall, etc).
-export default function Backup({ activeHunt, favorites, onRestore, onNavigate }) {
+export default function Backup({ activeHunt, favorites, monsterNotes, onRestore, onNavigate }) {
     const fileInputRef = useRef(null);
     const [importError, setImportError] = useState(null);
     const [importSuccess, setImportSuccess] = useState(false);
 
     function handleExport() {
-        const json = exportBackupJson(activeHunt, favorites);
+        const json = exportBackupJson(activeHunt, favorites, monsterNotes);
         const blob = new Blob([json], { type: "application/json" });
         const url = URL.createObjectURL(blob);
 

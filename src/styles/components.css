@@ -1087,6 +1087,15 @@
     opacity: 0.6;
 }
 
+/* Same gold "there's something here" treatment as the note button above,
+   for the Info button when the monster has a specialCondition worth
+   reading. No fill prop is set on the Info icon itself (see
+   .timer-card-action--has-info for why: it's a thin circular outline, not
+   a solid shape, so filling it looks wrong — only the color changes). */
+.monster-list-action--has-info {
+    color: var(--gold);
+}
+
 /* --- Backup page --- */
 
 .backup-intro {

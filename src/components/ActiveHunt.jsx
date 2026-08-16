@@ -8,6 +8,7 @@ import TimerCard from "./TimerCard";
 export default function ActiveHunt({
     activeHunt,
     updateMvp,
+    updateNote,
     moveToFavorites,
     unfavoriteInActiveHunt,
     removeFromActiveHunt,
@@ -72,6 +73,7 @@ export default function ActiveHunt({
                                     key={mvp.id}
                                     mvp={mvp}
                                     onUpdateMvp={updateMvp}
+                                    onSaveNote={(text) => updateNote(mvp.id, text)}
                                     onStop={() => handleStop(mvp)}
                                     onToggleFavorite={() => handleToggleFavorite(mvp)}
                                     alarmPrefs={alarmPrefs}

@@ -17,6 +17,7 @@ export default function Dashboard({
     favorites,
     addMvp,
     updateMvp,
+    updateNote,
     moveToFavorites,
     unfavoriteInActiveHunt,
     moveToActiveHunt,
@@ -137,11 +138,13 @@ export default function Dashboard({
                         favorites={favorites}
                         moveToActiveHunt={moveToActiveHunt}
                         removeFromFavorites={removeFromFavorites}
+                        updateNote={updateNote}
                     />
 
                     <ActiveHunt
                         activeHunt={activeHunt}
                         updateMvp={updateMvp}
+                        updateNote={updateNote}
                         moveToFavorites={moveToFavorites}
                         unfavoriteInActiveHunt={unfavoriteInActiveHunt}
                         removeFromActiveHunt={removeFromActiveHunt}

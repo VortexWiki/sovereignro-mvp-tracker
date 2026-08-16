@@ -6,7 +6,16 @@ import MonsterList from "./pages/MonsterList";
 import Backup from "./pages/Backup";
 import Settings from "./pages/Settings";
 import Footer from "./components/Footer";
-import { loadState, saveState, loadPreferences, savePreferences, clearAllData } from "./utils/persistence";
+import {
+    loadState,
+    saveState,
+    loadPreferences,
+    savePreferences,
+    clearAllData,
+    loadMonsterNotes,
+    saveMonsterNotes,
+    applyMonsterNotes
+} from "./utils/persistence";
 
 export default function App() {
     // Which page is showing. Kept as simple state here rather than pulling
@@ -16,6 +25,12 @@ export default function App() {
 
     const [activeHunt, setActiveHunt] = useState([]);
     const [favorites, setFavorites] = useState([]);
+
+    // Notes are keyed by monster id, independent of Active Hunt/Favorites
+    // tracking — the same note shows up on a TimerCard/FavoriteCard (if
+    // tracked) and on the Monster List row either way. { [id]: "text" },
+    // only non-empty notes are kept (see persistence.js).
+    const [monsterNotes, setMonsterNotes] = useState({});
 
     // Has the initial load-from-IndexedDB finished? We must not let the
     // save effect fire on the very first render (it would immediately
@@ -50,6 +65,12 @@ export default function App() {
             }
         });
 
+        loadMonsterNotes().then((saved) => {
+            if (!cancelled) {
+                setMonsterNotes(saved);
+            }
+        });
+
         return () => {
             cancelled = true;
         };
@@ -75,13 +96,30 @@ export default function App() {
         savePreferences(updated);
     }
 
-    // Wipes IndexedDB entirely (tracker data + preferences) and resets the
-    // app back to a first-visit state. Used by the Settings page's "reset
-    // to zero" button.
+    // Sets (or clears, on empty text) the shared note for a monster by id.
+    // Independent of tracking — works the same whether that monster is in
+    // Active Hunt, Favorites, or neither. Empty text removes the key
+    // entirely rather than storing "", keeping monsterNotes free of dead
+    // entries over time.
+    function updateNote(monsterId, text) {
+        const updated = { ...monsterNotes };
+        if (text) {
+            updated[monsterId] = text;
+        } else {
+            delete updated[monsterId];
+        }
+        setMonsterNotes(updated);
+        saveMonsterNotes(updated);
+    }
+
+    // Wipes IndexedDB entirely (tracker data + preferences + notes) and
+    // resets the app back to a first-visit state. Used by the Settings
+    // page's "reset to zero" button.
     async function resetEverything() {
         await clearAllData();
         setActiveHunt([]);
         setFavorites([]);
+        setMonsterNotes({});
         const freshPrefs = await loadPreferences();
         setPrefs(freshPrefs);
     }
@@ -185,6 +223,13 @@ export default function App() {
         setFavorites(newOrder);
     }
 
+    // Notes are merged onto the live objects at render time (not stored
+    // inline on activeHunt/favorites — see monsterNotes above), so every
+    // surface (TimerCard, FavoriteCard, Monster List) always shows the same
+    // up-to-date note for a given monster id.
+    const activeHuntWithNotes = applyMonsterNotes(activeHunt, monsterNotes);
+    const favoritesWithNotes = applyMonsterNotes(favorites, monsterNotes);
+
     return (
         <div className="app">
 
@@ -199,6 +244,8 @@ export default function App() {
                         isFavorited={isFavorited}
                         addMvp={addMvp}
                         addToFavorites={addToFavorites}
+                        monsterNotes={monsterNotes}
+                        updateNote={updateNote}
                         onNavigate={setCurrentPage}
                     />
 
@@ -209,9 +256,12 @@ export default function App() {
                     <Backup
                         activeHunt={activeHunt}
                         favorites={favorites}
+                        monsterNotes={monsterNotes}
                         onRestore={(restored) => {
                             setActiveHunt(restored.activeHunt);
                             setFavorites(restored.favorites);
+                            setMonsterNotes(restored.monsterNotes || {});
+                            saveMonsterNotes(restored.monsterNotes || {});
                         }}
                         onNavigate={setCurrentPage}
                     />
@@ -231,10 +281,11 @@ export default function App() {
                 {currentPage === "dashboard" && (
 
                     <Dashboard
-                        activeHunt={activeHunt}
-                        favorites={favorites}
+                        activeHunt={activeHuntWithNotes}
+                        favorites={favoritesWithNotes}
                         addMvp={addMvp}
                         updateMvp={updateMvp}
+                        updateNote={updateNote}
                         moveToFavorites={moveToFavorites}
                         unfavoriteInActiveHunt={unfavoriteInActiveHunt}
                         moveToActiveHunt={moveToActiveHunt}

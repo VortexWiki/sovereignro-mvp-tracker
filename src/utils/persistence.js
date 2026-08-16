@@ -8,9 +8,17 @@
 // app versions — serializing them would duplicate data and go stale. We
 // only persist the volatile, user-generated bits:
 //   - which monster IDs are in Active Hunt / Favorites, and their order
-//   - per-monster: isFavorite, note
+//   - per-monster: isFavorite
 //   - per-spawn (keyed by map name, not array index — indexes shift if we
 //     ever reorder/add spawns in the data file): killedAt, lastKillMarker
+//
+// Notes are NOT part of this tracked-entry shape — see monsterExtras below.
+// A note is written by monster ID regardless of whether that monster is
+// currently in Active Hunt, Favorites, or neither (e.g. jotted down from the
+// Monster List page on something you haven't started hunting yet), and it's
+// the same note wherever it's shown. Storing it on the tracked-entry would
+// mean it vanishes the moment a card is Stopped/removed, which defeats the
+// purpose.
 //
 // On load, we look up each stored ID against the current ALL_MONSTERS list
 // and rebuild the full live object by merging saved volatile data onto the
@@ -42,13 +50,13 @@ function findMonster(id) {
 }
 
 // Strips a live monster object (which may carry runtime-only fields like
-// isFavorite, note, and per-spawn killedAt/lastKillMarker) down to just the
-// volatile bits worth saving.
+// isFavorite and per-spawn killedAt/lastKillMarker) down to just the
+// volatile bits worth saving. Note is deliberately NOT included here — see
+// monsterExtras below.
 function toPersistedEntry(mvp) {
     return {
         id: mvp.id,
         isFavorite: !!mvp.isFavorite,
-        note: mvp.note || "",
         spawns: (mvp.spawns || []).map((spawn) => ({
             map: spawn.map,
             killedAt: spawn.killedAt || null,
@@ -59,7 +67,9 @@ function toPersistedEntry(mvp) {
 
 // Rebuilds a live monster object from a persisted entry: start from the
 // current static data (fresh sprite/mapImage/respawn info) and layer the
-// saved volatile fields on top, matching spawns by map name.
+// saved volatile fields on top, matching spawns by map name. `note` is
+// merged in separately by the caller (from monsterExtras), since it isn't
+// part of the persisted-entry shape.
 function fromPersistedEntry(entry) {
     const base = findMonster(entry.id);
     if (!base) {
@@ -87,7 +97,6 @@ function fromPersistedEntry(entry) {
     return {
         ...base,
         isFavorite: entry.isFavorite,
-        note: entry.note,
         spawns: mergedSpawns
     };
 }
@@ -102,7 +111,9 @@ export async function saveState(activeHunt, favorites) {
 }
 
 // Returns { activeHunt: [...], favorites: [...] } rebuilt from storage, or
-// null if there's nothing saved yet (first-ever visit).
+// null if there's nothing saved yet (first-ever visit). Notes are merged in
+// afterwards by the caller via applyMonsterNotes — this function only knows
+// about the tracked-entry shape (isFavorite, timers, markers).
 export async function loadState() {
     const row = await db.state.get("tracker");
     if (!row) {
@@ -120,20 +131,58 @@ export async function loadState() {
     return { activeHunt, favorites };
 }
 
+// --- Monster notes (independent of Active Hunt / Favorites tracking) ---
+//
+// A note lives on the monster ID itself, not on a tracked-entry — you can
+// jot one down from the Monster List page on something you haven't added
+// to Active Hunt or Favorites yet, and the same note shows up everywhere
+// that monster appears (its TimerCard/FavoriteCard if you later track it,
+// and the Monster List row either way). Stored as a single flat object
+// { [monsterId]: "note text" } — only IDs with a non-empty note are kept,
+// so this stays small over time instead of accumulating empty-string
+// entries for every monster ever glanced at.
+
+export async function loadMonsterNotes() {
+    const row = await db.state.get("monsterNotes");
+    return row ? row.value : {};
+}
+
+export async function saveMonsterNotes(notesById) {
+    await db.state.put({ key: "monsterNotes", value: notesById });
+}
+
+// Merges saved notes onto a list of live monster objects (by id), for
+// display. Monsters with no saved note are left untouched (no `note` key
+// added) so `mvp.note` truthiness checks elsewhere keep working as before.
+export function applyMonsterNotes(monsters, notesById) {
+    if (!notesById) {
+        return monsters;
+    }
+    return monsters.map((m) =>
+        notesById[m.id] ? { ...m, note: notesById[m.id] } : m
+    );
+}
+
 // --- JSON backup / restore ---
 //
 // Same persisted-entry shape as the IndexedDB store, wrapped with a version
 // tag so a future format change can detect and migrate older backups
 // instead of silently misreading them.
 
-const BACKUP_FORMAT_VERSION = 1;
+// Bumped from 1 to 2 when monsterNotes was added as its own top-level field
+// (previously notes lived inline on each tracked entry). Old backups
+// (formatVersion 1 or missing) simply have no monsterNotes field — handled
+// below by defaulting to {}, no explicit migration needed since the
+// tracked-entry shape itself didn't change.
+const BACKUP_FORMAT_VERSION = 2;
 
-export function exportBackupJson(activeHunt, favorites) {
+export function exportBackupJson(activeHunt, favorites, monsterNotes) {
     const payload = {
         formatVersion: BACKUP_FORMAT_VERSION,
         exportedAt: new Date().toISOString(),
         activeHunt: activeHunt.map(toPersistedEntry),
-        favorites: favorites.map(toPersistedEntry)
+        favorites: favorites.map(toPersistedEntry),
+        monsterNotes: monsterNotes || {}
     };
 
     return JSON.stringify(payload, null, 2);
@@ -141,7 +190,9 @@ export function exportBackupJson(activeHunt, favorites) {
 
 // Parses and rebuilds live state from an uploaded backup JSON string.
 // Throws with a human-readable message on anything malformed, so the
-// caller can show it to the user instead of a raw parser error.
+// caller can show it to the user instead of a raw parser error. Returns
+// monsterNotes alongside activeHunt/favorites — older backups (v1, no notes
+// field yet) just come back with an empty {} here.
 export function importBackupJson(jsonText) {
     let parsed;
     try {
@@ -160,8 +211,11 @@ export function importBackupJson(jsonText) {
 
     const activeHunt = parsed.activeHunt.map(fromPersistedEntry).filter(Boolean);
     const favorites = parsed.favorites.map(fromPersistedEntry).filter(Boolean);
+    const monsterNotes = (parsed.monsterNotes && typeof parsed.monsterNotes === "object")
+        ? parsed.monsterNotes
+        : {};
 
-    return { activeHunt, favorites };
+    return { activeHunt, favorites, monsterNotes };
 }
 
 // --- Preferences (sound alarm, notifications, etc) ---

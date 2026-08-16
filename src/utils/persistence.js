@@ -152,15 +152,17 @@ export async function saveMonsterNotes(notesById) {
 }
 
 // Merges saved notes onto a list of live monster objects (by id), for
-// display. Monsters with no saved note are left untouched (no `note` key
-// added) so `mvp.note` truthiness checks elsewhere keep working as before.
+// display. Always sets `note` explicitly (to the saved text, or "" if none)
+// rather than only adding it when present — a monster object can already
+// be carrying a stale `note` from an earlier merge (e.g. addMvp/addToFavorites
+// copy whatever object Monster List handed them, which had already been run
+// through applyMonsterNotes once). Without this, clearing a note wouldn't
+// visibly clear the gold icon on an already-tracked card: the tracked
+// entry's own stale `note` would keep winning since nothing here would ever
+// overwrite it back to empty.
 export function applyMonsterNotes(monsters, notesById) {
-    if (!notesById) {
-        return monsters;
-    }
-    return monsters.map((m) =>
-        notesById[m.id] ? { ...m, note: notesById[m.id] } : m
-    );
+    const notes = notesById || {};
+    return monsters.map((m) => ({ ...m, note: notes[m.id] || "" }));
 }
 
 // --- JSON backup / restore ---

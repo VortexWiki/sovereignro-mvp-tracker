@@ -336,6 +336,43 @@ import ozDun02 from "../assets/maps/oz_dun02.webp";
 import silentMayaSprite from "../assets/sprites/21395.gif";
 import antD02_i from "../assets/maps/ant_d02_i.webp";
 
+import stefanJEWolfSprite from "../assets/sprites/3473.gif";
+import sthd1 from "../assets/maps/1@sthd.webp";
+
+import bigEggringSprite from "../assets/sprites/3505.gif";
+import lasaDun01 from "../assets/maps/lasa_dun01.webp";
+
+import cutieSprite from "../assets/sprites/3621.gif";
+import slabw01 from "../assets/maps/slabw01.webp";
+
+import heartHunterEbelSprite from "../assets/sprites/3628.gif";
+import swat1 from "../assets/maps/1@swat.webp";
+
+import venomousChimeraSprite from "../assets/sprites/3633.gif";
+
+import lichLordSprite from "../assets/sprites/3658.gif";
+import mdGef1 from "../assets/maps/1@md_gef.webp";
+
+import lichLordHardSprite from "../assets/sprites/3659.gif";
+
+import mechaspiderSprite from "../assets/sprites/3741.gif";
+import rockmi1 from "../assets/maps/rockmi1.webp";
+
+import draculaOfRageSprite from "../assets/sprites/3757.gif";
+import gefD01_i from "../assets/maps/gef_d01_i.webp";
+
+import angryMoonlightFlowerSprite from "../assets/sprites/3758.gif";
+import payD03_i from "../assets/maps/pay_d03_i.webp";
+
+import awakenedKtullanuxSprite from "../assets/sprites/3796.gif";
+import iceD03_i from "../assets/maps/ice_d03_i.webp";
+
+import ominousTurtleGeneralSprite from "../assets/sprites/3804.gif";
+import turD04_i from "../assets/maps/tur_d04_i.webp";
+
+import kingPoringSprite from "../assets/sprites/3810.gif";
+import begi1 from "../assets/maps/1@begi.webp";
+
 const mvps = [
     {
         id: 1038,
@@ -2174,6 +2211,224 @@ const mvps = [
                 respawnMin: 120,
                 respawnMax: 120,
                 mapImage: antD02_i
+            }
+        ]
+    },
+    {
+        id: 3473,
+        name: "Stefan.J.E.Wolf",
+        sprite: stefanJEWolfSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3473",
+        specialCondition: "Aerial Fortress Top Floor (1@sthd)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@sthd",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: sthd1
+            }
+        ]
+    },
+    {
+        id: 3505,
+        name: "Big Eggring",
+        sprite: bigEggringSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3505",
+        spawns: [
+            {
+                map: "lasa_dun01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: lasaDun01
+            }
+        ]
+    },
+    {
+        id: 3621,
+        name: "Cutie",
+        sprite: cutieSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3621",
+        specialCondition: "Werner's Laboratory quest",
+        spawns: [
+            {
+                map: "slabw01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: slabw01
+            }
+        ]
+    },
+    {
+        id: 3628,
+        name: "Heart Hunter Ebel",
+        sprite: heartHunterEbelSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3628",
+        specialCondition: "Heart Hunter War Base (1@swat)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@swat",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: swat1
+            }
+        ]
+    },
+    {
+        id: 3633,
+        name: "Venomous Chimera",
+        sprite: venomousChimeraSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3633",
+        spawns: [
+            {
+                map: "slabw01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: slabw01
+            }
+        ]
+    },
+    {
+        id: 3658,
+        name: "Lich Lord",
+        sprite: lichLordSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3658",
+        specialCondition: "Friday Memorial (1@md_gef)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@md_gef",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: mdGef1
+            }
+        ]
+    },
+    {
+        id: 3659,
+        name: "Lich Lord (hard)",
+        sprite: lichLordHardSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3659",
+        specialCondition: "Friday Memorial - Hard Mode (1@md_gef(hard))\n*Instance Map",
+        spawns: [
+            {
+                map: "1@md_gef",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: mdGef1
+            }
+        ]
+    },
+    {
+        id: 3741,
+        name: "Mechaspider",
+        sprite: mechaspiderSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3741",
+        spawns: [
+            {
+                map: "rockmi1",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: rockmi1
+            }
+        ]
+    },
+    {
+        id: 3757,
+        name: "Dracula of Rage",
+        sprite: draculaOfRageSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3757",
+        specialCondition: "Spawn after defeating Bomi.",
+        spawns: [
+            {
+                map: "gef_d01_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: gefD01_i
+            }
+        ]
+    },
+    {
+        id: 3758,
+        name: "Angry Moonlight Flower",
+        sprite: angryMoonlightFlowerSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3758",
+        specialCondition: "10% chance to spawn after defeating 1000 Angry Nine Tail.",
+        spawns: [
+            {
+                map: "pay_d03_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: payD03_i
+            }
+        ]
+    },
+    {
+        id: 3796,
+        name: "Awakened Ktullanux",
+        sprite: awakenedKtullanuxSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3796",
+        specialCondition: "Spawn after unlocking 4 Crystal Seals on map.",
+        spawns: [
+            {
+                map: "ice_d03_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: iceD03_i
+            }
+        ]
+    },
+    {
+        id: 3804,
+        name: "Ominous Turtle General",
+        sprite: ominousTurtleGeneralSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3804",
+        specialCondition: "Spawn after defeating 2500 of the same mob on map.",
+        spawns: [
+            {
+                map: "tur_d04_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: turD04_i
+            }
+        ]
+    },
+    {
+        id: 3810,
+        name: "King Poring",
+        sprite: kingPoringSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3810",
+        specialCondition: "Poring Village (Beginner Instance) (1@begi)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@begi",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: begi1
             }
         ]
     },

@@ -50,6 +50,9 @@ import splFild03 from "../assets/maps/spl_fild03.webp";
 import loraSprite from "../assets/sprites/2250.gif";
 import gld2Prt from "../assets/maps/gld2_prt.webp";
 
+import bomiSprite from "../assets/sprites/3756.gif";
+import gefD01_i from "../assets/maps/gef_d01_i.webp";
+
 const minibosses = [
     {
         id: 1089,
@@ -354,6 +357,22 @@ const minibosses = [
                 respawnMin: 30,
                 respawnMax: 40,
                 mapImage: gld2Prt
+            }
+        ]
+    },
+    {
+        id: 3756,
+        name: "Bomi",
+        sprite: bomiSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3756",
+        spawns: [
+            {
+                map: "gef_d01_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: gefD01_i
             }
         ]
     },

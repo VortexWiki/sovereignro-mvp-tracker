@@ -187,7 +187,17 @@ const DEFAULT_PREFERENCES = {
     soundId: "chime",
     soundEnabled: true,
     notificationsEnabled: false,
-    volume: 0.7
+    volume: 0.7,
+    // How many times the alarm sound plays back-to-back on Spawn Possible
+    // (1 = just once, up to 5). Applies to both the default sound and any
+    // per-MVP override sound below.
+    soundRepeatCount: 1,
+    // Per-MVP sound overrides: { [mvpId]: soundId }. When a MVP has an
+    // entry here, its spawn alert plays this sound instead of the default
+    // prefs.soundId. Kept alongside the other preferences (per-browser
+    // setting) rather than in the tracker data, since it's about "how this
+    // browser alerts me", not the monster itself.
+    mvpSoundOverrides: {}
 };
 
 export async function loadPreferences() {

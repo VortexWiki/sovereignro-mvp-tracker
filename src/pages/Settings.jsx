@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Bell, Play, Trash2, AlertTriangle, BellRing, Download, CheckCircle2 } from "lucide-react";
+import { Bell, Play, Trash2, AlertTriangle, BellRing, Download, CheckCircle2, X } from "lucide-react";
 
 import { BUILTIN_SOUNDS } from "../utils/persistence";
 import { playSound, isNotificationSupported, getNotificationPermission, requestNotificationPermission } from "../utils/alarm";
 import { isInstallPromptAvailable, onInstallAvailabilityChange, isRunningStandalone, triggerInstallPrompt } from "../utils/pwaInstall";
+import ALL_MONSTERS from "../data/allMonsters";
 
 // Settings page: choose the spawn_window alarm sound from a built-in bank,
 // toggle sound/notifications, adjust volume, and a dangerous "reset
@@ -20,6 +21,35 @@ export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
     const [installAvailable, setInstallAvailable] = useState(isInstallPromptAvailable());
     const [installOutcome, setInstallOutcome] = useState(null);
     const alreadyInstalled = isRunningStandalone();
+
+    // "Add a per-MVP sound" mini-form: which monster + which sound is
+    // currently selected in the two dropdowns, before hitting Add.
+    const [overrideMvpId, setOverrideMvpId] = useState("");
+    const [overrideSoundId, setOverrideSoundId] = useState(BUILTIN_SOUNDS[0].id);
+
+    const mvpSoundOverrides = prefs.mvpSoundOverrides || {};
+    const sortedMonsters = [...ALL_MONSTERS].sort((a, b) => a.name.localeCompare(b.name));
+
+    function findMonsterName(id) {
+        const found = ALL_MONSTERS.find((m) => String(m.id) === String(id));
+        return found ? found.name : `#${id}`;
+    }
+
+    function handleAddOverride() {
+        if (!overrideMvpId) {
+            return;
+        }
+        onUpdatePrefs({
+            mvpSoundOverrides: { ...mvpSoundOverrides, [overrideMvpId]: overrideSoundId }
+        });
+        setOverrideMvpId("");
+    }
+
+    function handleRemoveOverride(mvpId) {
+        const updated = { ...mvpSoundOverrides };
+        delete updated[mvpId];
+        onUpdatePrefs({ mvpSoundOverrides: updated });
+    }
 
     useEffect(() => {
         // The beforeinstallprompt event can fire at any point after page
@@ -148,6 +178,106 @@ export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
                             onChange={(e) => onUpdatePrefs({ volume: parseFloat(e.target.value) })}
                         />
                     </div>
+
+                    <div className="settings-volume-row">
+                        <span>Repeat</span>
+                        <input
+                            type="range"
+                            min="1"
+                            max="5"
+                            step="1"
+                            value={prefs.soundRepeatCount || 1}
+                            onChange={(e) => onUpdatePrefs({ soundRepeatCount: parseInt(e.target.value, 10) })}
+                        />
+                        <span>{prefs.soundRepeatCount || 1}x</span>
+                    </div>
+
+                </div>
+
+                <div className="backup-section">
+
+                    <h2 className="backup-section-title">Per-MVP sound</h2>
+
+                    <p className="backup-section-text">
+                        Give a specific MVP or mini-boss its own alert sound,
+                        overriding the default sound above just for that one.
+                    </p>
+
+                    <div className="settings-override-row">
+
+                        <select
+                            className="settings-override-select"
+                            value={overrideMvpId}
+                            onChange={(e) => setOverrideMvpId(e.target.value)}
+                        >
+                            <option value="">Choose a monster...</option>
+                            {sortedMonsters.map((m) => (
+                                <option key={m.id} value={m.id}>{m.name}</option>
+                            ))}
+                        </select>
+
+                        <select
+                            className="settings-override-select"
+                            value={overrideSoundId}
+                            onChange={(e) => setOverrideSoundId(e.target.value)}
+                        >
+                            {BUILTIN_SOUNDS.map((sound) => (
+                                <option key={sound.id} value={sound.id}>{sound.label}</option>
+                            ))}
+                        </select>
+
+                        <button
+                            type="button"
+                            className="backup-action"
+                            onClick={handleAddOverride}
+                            disabled={!overrideMvpId}
+                        >
+                            Add
+                        </button>
+
+                    </div>
+
+                    {Object.keys(mvpSoundOverrides).length > 0 && (
+
+                        <div className="settings-override-list">
+
+                            {Object.entries(mvpSoundOverrides).map(([mvpId, soundId]) => (
+
+                                <div key={mvpId} className="settings-override-item">
+
+                                    <span className="settings-override-item-name">{findMonsterName(mvpId)}</span>
+
+                                    <span className="settings-override-item-sound">
+                                        {BUILTIN_SOUNDS.find((s) => s.id === soundId)?.label || soundId}
+                                    </span>
+
+                                    <button
+                                        type="button"
+                                        className="settings-sound-preview"
+                                        onClick={() => handlePreview(soundId)}
+                                        aria-label="Preview"
+                                        data-tooltip="Preview"
+                                    >
+                                        <Play size={14} />
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        className="settings-override-remove"
+                                        onClick={() => handleRemoveOverride(mvpId)}
+                                        aria-label="Remove override"
+                                        data-tooltip="Remove"
+                                    >
+                                        <X size={14} />
+                                    </button>
+
+                                </div>
+
+                            ))}
+
+                        </div>
+
+                    )}
 
                 </div>
 

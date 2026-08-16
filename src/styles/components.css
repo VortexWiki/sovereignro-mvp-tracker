@@ -293,6 +293,11 @@
     box-shadow: 0 0 0 1px var(--gold-strong), 0 0 16px var(--gold-soft);
 }
 
+.timer-card--spawned {
+    border-color: var(--success);
+    box-shadow: 0 0 0 1px var(--success), 0 0 16px rgba(34, 197, 94, 0.18);
+}
+
 .timer-card:hover {
     border-color: var(--gold-border);
     transform: translateY(-3px);
@@ -1274,6 +1279,74 @@
     accent-color: var(--gold);
     flex: 1;
     max-width: 240px;
+}
+
+.settings-override-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.settings-override-select {
+    flex: 1;
+    min-width: 160px;
+    border-radius: 8px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface-hover);
+    color: var(--text);
+    font-size: 13.5px;
+    padding: 9px 10px;
+}
+
+.settings-override-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.settings-override-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface-hover);
+    padding: 8px 12px;
+}
+
+.settings-override-item-name {
+    flex: 1;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.settings-override-item-sound {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+}
+
+.settings-override-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.settings-override-remove:hover {
+    background: var(--surface);
+    color: var(--danger);
 }
 
 .settings-pwa-hint {

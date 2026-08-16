@@ -92,7 +92,7 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
     useEffect(() => {
         const previousStatus = previousStatusRef.current;
         if (previousStatus !== "spawn_window" && status === "spawn_window" && alarmPrefs) {
-            triggerSpawnAlert(mvp.name, spawn ? spawn.map : "Unknown", alarmPrefs);
+            triggerSpawnAlert(mvp.name, spawn ? spawn.map : "Unknown", alarmPrefs, mvp.id);
         }
         previousStatusRef.current = status;
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -164,7 +164,7 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
         <div
             ref={setNodeRef}
             style={dragStyle}
-            className={`timer-card${isDragging ? " timer-card--dragging" : ""}${status === "spawn_window" ? " timer-card--spawn-window" : ""}`}
+            className={`timer-card${isDragging ? " timer-card--dragging" : ""}${status === "spawn_window" ? " timer-card--spawn-window" : ""}${status === "spawned" ? " timer-card--spawned" : ""}`}
         >
 
             {mvp.category === "miniboss" ? (

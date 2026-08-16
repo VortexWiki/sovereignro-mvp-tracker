@@ -26,29 +26,52 @@ const BUILTIN_SOUND_FILES = {
     arcade: arcadeSound
 };
 
-export function getSoundUrl(prefs) {
-    return BUILTIN_SOUND_FILES[prefs.soundId] || BUILTIN_SOUND_FILES.chime;
+export function getSoundUrl(prefs, soundIdOverride) {
+    const soundId = soundIdOverride || prefs.soundId;
+    return BUILTIN_SOUND_FILES[soundId] || BUILTIN_SOUND_FILES.chime;
 }
 
-// Plays a preview or the real alert sound. Returns the Audio element in
-// case the caller wants to stop() it early (not currently used, but handy
-// for a "stop preview" button later).
-export function playSound(prefs) {
+// Plays a preview or the real alert sound. Returns the Audio element of the
+// last repetition in case the caller wants to stop() it early (not
+// currently used, but handy for a "stop preview" button later).
+//
+// soundIdOverride: used for a per-MVP sound (bypasses prefs.soundId)
+// without needing to build a whole fake prefs object at the call site.
+export function playSound(prefs, soundIdOverride) {
     if (!prefs.soundEnabled) {
         return null;
     }
-    try {
-        const audio = new Audio(getSoundUrl(prefs));
-        audio.volume = prefs.volume != null ? prefs.volume : 0.7;
-        audio.play().catch(() => {
-            // Autoplay can be blocked before the user has interacted with
-            // the page at all — nothing useful to do here besides not
-            // crashing the app over it.
-        });
-        return audio;
-    } catch (err) {
-        return null;
+
+    const url = getSoundUrl(prefs, soundIdOverride);
+    const volume = prefs.volume != null ? prefs.volume : 0.7;
+    const repeatCount = Math.min(5, Math.max(1, prefs.soundRepeatCount || 1));
+
+    let lastAudio = null;
+
+    function playOnce(remaining) {
+        try {
+            const audio = new Audio(url);
+            audio.volume = volume;
+            lastAudio = audio;
+            if (remaining > 1) {
+                // Back-to-back, no pause: chain the next play() off this
+                // one's "ended" event rather than a timer, so it's exact
+                // regardless of the sound file's actual length.
+                audio.addEventListener("ended", () => playOnce(remaining - 1));
+            }
+            audio.play().catch(() => {
+                // Autoplay can be blocked before the user has interacted
+                // with the page at all — nothing useful to do here besides
+                // not crashing the app over it.
+            });
+        } catch (err) {
+            // Swallow — a failed repetition just means the chain stops.
+        }
     }
+
+    playOnce(repeatCount);
+
+    return lastAudio;
 }
 
 export function isNotificationSupported() {
@@ -91,8 +114,10 @@ export function notifySpawnPossible(mvpName, mapName, prefs) {
 }
 
 // Called once per genuine transition into "spawn_window" for a given card.
-// Plays the configured sound and raises a notification.
-export function triggerSpawnAlert(mvpName, mapName, prefs) {
-    playSound(prefs);
+// Plays the configured sound (or this MVP's override sound, if one is set
+// in prefs.mvpSoundOverrides) and raises a notification.
+export function triggerSpawnAlert(mvpName, mapName, prefs, mvpId) {
+    const override = mvpId != null ? prefs.mvpSoundOverrides?.[mvpId] : null;
+    playSound(prefs, override);
     notifySpawnPossible(mvpName, mapName, prefs);
 }

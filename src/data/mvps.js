@@ -373,6 +373,57 @@ import turD04_i from "../assets/maps/tur_d04_i.webp";
 import kingPoringSprite from "../assets/sprites/3810.gif";
 import begi1 from "../assets/maps/1@begi.webp";
 
+import celineKimiSprite from "../assets/sprites/2996.gif";
+import xmD1 from "../assets/maps/1@xm_d.webp";
+
+import grimReaperAnkouSprite from "../assets/sprites/3029.gif";
+import dth3_1 from "../assets/maps/1@dth3.webp";
+
+import awakenedFerreSprite from "../assets/sprites/3073.gif";
+import jtb1 from "../assets/maps/1@jtb.webp";
+
+import timeHolderSprite from "../assets/sprites/3074.gif";
+import cTower3_ from "../assets/maps/c_tower3_.webp";
+
+import charleston3Sprite from "../assets/sprites/3124.gif";
+import mcd1 from "../assets/maps/1@mcd.webp";
+
+import captainFerlockSprite from "../assets/sprites/3181.gif";
+import air2_1 from "../assets/maps/1@air2.webp";
+
+import sarahIreneSprite from "../assets/sprites/3190.gif";
+import glast1 from "../assets/maps/1@glast.webp";
+
+import guillotineCrossEremesSprite from "../assets/sprites/3220.gif";
+import lhzDunN from "../assets/maps/lhz_dun_n.webp";
+
+import archBishopMargarethaSprite from "../assets/sprites/3221.gif";
+import rangerShecilSprite from "../assets/sprites/3222.gif";
+import mechanicHarwordSprite from "../assets/sprites/3223.gif";
+import warlockKatrinnSprite from "../assets/sprites/3224.gif";
+import runeKnightSeyrenSprite from "../assets/sprites/3225.gif";
+import royalGuardRandelSprite from "../assets/sprites/3240.gif";
+import geneticFlamelSprite from "../assets/sprites/3241.gif";
+import sorcererCeliaSprite from "../assets/sprites/3242.gif";
+import suraChenSprite from "../assets/sprites/3243.gif";
+import shadowChaserGertieSprite from "../assets/sprites/3244.gif";
+import minstrelAlphoccioSprite from "../assets/sprites/3245.gif";
+import wandererTrentiniSprite from "../assets/sprites/3246.gif";
+
+import twoSprite from "../assets/sprites/3254.gif";
+import uns1 from "../assets/maps/1@uns.webp";
+
+import infiniteEddgaSprite from "../assets/sprites/3426.gif";
+import infi1 from "../assets/maps/1@infi.webp";
+
+import infiniteOsirisSprite from "../assets/sprites/3427.gif";
+import infinitePhreeoniSprite from "../assets/sprites/3428.gif";
+import infiniteOrcHeroSprite from "../assets/sprites/3429.gif";
+import infiniteTaoGunkaSprite from "../assets/sprites/3430.gif";
+
+import bijouSprite from "../assets/sprites/3450.gif";
+import mir1 from "../assets/maps/1@mir.webp";
+
 const mvps = [
     {
         id: 1038,
@@ -2429,6 +2480,464 @@ const mvps = [
                 respawnMin: null,
                 respawnMax: null,
                 mapImage: begi1
+            }
+        ]
+    },
+    {
+        id: 2996,
+        name: "Celine Kimi",
+        sprite: celineKimiSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/2996",
+        specialCondition: "Horror Toy Factory (1@xm_d)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@xm_d",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: xmD1
+            }
+        ]
+    },
+    {
+        id: 3029,
+        name: "Grim Reaper Ankou",
+        sprite: grimReaperAnkouSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3029",
+        specialCondition: "Bios Island Room 3 (1@dth3)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@dth3",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: dth3_1
+            }
+        ]
+    },
+    {
+        id: 3073,
+        name: "Awakened Ferre",
+        sprite: awakenedFerreSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3073",
+        specialCondition: "Jitterbug of Nightmare (1@jtb)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@jtb",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: jtb1
+            }
+        ]
+    },
+    {
+        id: 3074,
+        name: "Time Holder",
+        sprite: timeHolderSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3074",
+        spawns: [
+            {
+                map: "c_tower3_",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: cTower3_
+            }
+        ]
+    },
+    {
+        id: 3124,
+        name: "Charleston 3",
+        sprite: charleston3Sprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3124",
+        specialCondition: "Charleston Factory (1@mcd)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@mcd",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: mcd1
+            }
+        ]
+    },
+    {
+        id: 3181,
+        name: "Captain Ferlock",
+        sprite: captainFerlockSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3181",
+        specialCondition: "Airship Assault (1@air2)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@air2",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: air2_1
+            }
+        ]
+    },
+    {
+        id: 3190,
+        name: "Sarah Irene",
+        sprite: sarahIreneSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3190",
+        specialCondition: "Sarah and Fenrir (1@glast)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@glast",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: glast1
+            }
+        ]
+    },
+    {
+        id: 3220,
+        name: "Guillotine Cross Eremes",
+        sprite: guillotineCrossEremesSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3220",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3221,
+        name: "Arch Bishop Margaretha",
+        sprite: archBishopMargarethaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3221",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3222,
+        name: "Ranger Shecil",
+        sprite: rangerShecilSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3222",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3223,
+        name: "Mechanic Harword",
+        sprite: mechanicHarwordSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3223",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3224,
+        name: "Warlock Katrinn",
+        sprite: warlockKatrinnSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3224",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3225,
+        name: "Rune Knight Seyren",
+        sprite: runeKnightSeyrenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3225",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3240,
+        name: "Royal Guard Randel",
+        sprite: royalGuardRandelSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3240",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3241,
+        name: "Genetic Flamel",
+        sprite: geneticFlamelSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3241",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3242,
+        name: "Sorcerer Celia",
+        sprite: sorcererCeliaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3242",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3243,
+        name: "Sura Chen",
+        sprite: suraChenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3243",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3244,
+        name: "Shadow Chaser Gertie",
+        sprite: shadowChaserGertieSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3244",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3245,
+        name: "Minstrel Alphoccio",
+        sprite: minstrelAlphoccioSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3245",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3246,
+        name: "Wanderer Trentini",
+        sprite: wandererTrentiniSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3246",
+        specialCondition: "Tomb of the Fallen.\n1 MVP spawn after 4 kill of the mini-boss.",
+        spawns: [
+            {
+                map: "lhz_dun_n",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lhzDunN
+            }
+        ]
+    },
+    {
+        id: 3254,
+        name: "T_W_O",
+        sprite: twoSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3254",
+        specialCondition: "The Last Room (1@uns)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@uns",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: uns1
+            }
+        ]
+    },
+    {
+        id: 3426,
+        name: "Infinite Eddga",
+        sprite: infiniteEddgaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3426",
+        specialCondition: "Infinite Space (1@infi)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@infi",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: infi1
+            }
+        ]
+    },
+    {
+        id: 3427,
+        name: "Infinite Osiris",
+        sprite: infiniteOsirisSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3427",
+        specialCondition: "Infinite Space (1@infi)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@infi",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: infi1
+            }
+        ]
+    },
+    {
+        id: 3428,
+        name: "Infinite Phreeoni",
+        sprite: infinitePhreeoniSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3428",
+        specialCondition: "Infinite Space (1@infi)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@infi",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: infi1
+            }
+        ]
+    },
+    {
+        id: 3429,
+        name: "Infinite Orc Hero",
+        sprite: infiniteOrcHeroSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3429",
+        specialCondition: "Infinite Space (1@infi)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@infi",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: infi1
+            }
+        ]
+    },
+    {
+        id: 3430,
+        name: "Infinite Tao Gunka",
+        sprite: infiniteTaoGunkaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3430",
+        specialCondition: "Infinite Space (1@infi)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@infi",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: infi1
+            }
+        ]
+    },
+    {
+        id: 3450,
+        name: "Bijou",
+        sprite: bijouSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/3450",
+        specialCondition: "Ritual Room (1@mir)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@mir",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: mir1
             }
         ]
     },

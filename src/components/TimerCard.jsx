@@ -300,12 +300,12 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
 
                 <button
                     type="button"
-                    className="timer-card-action"
+                    className={`timer-card-action${mvp.specialCondition ? " timer-card-action--has-info" : ""}`}
                     onClick={() => setInfoPopupOpen(true)}
                     aria-label="More info"
                     data-tooltip="More info"
                 >
-                    <Info size={18} />
+                    <Info size={18} fill={mvp.specialCondition ? "currentColor" : "none"} />
                 </button>
 
             </div>

@@ -574,6 +574,13 @@
     color: var(--gold);
 }
 
+/* Highlights the "More info" icon gold when the MVP has a specialCondition
+   worth reading — same treatment as the note icon above it, so both act as
+   a visual "there's something here" indicator. */
+.timer-card-action--has-info {
+    color: var(--gold);
+}
+
 /* --- Map popup --- */
 
 .map-popup-overlay {

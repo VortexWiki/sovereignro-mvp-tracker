@@ -268,6 +268,74 @@ import geSt1 from "../assets/maps/1@ge_st.webp";
 import evilFanaticsSprite from "../assets/sprites/2942.gif";
 import tnm3_1 from "../assets/maps/1@tnm3.webp";
 
+import shiningTeddyBearSprite from "../assets/sprites/20260.gif";
+import einDun02b from "../assets/maps/ein_dun02.webp";
+
+import ancientTaoGunkaSprite from "../assets/sprites/20273.gif";
+import comD02_i from "../assets/maps/com_d02_i.webp";
+
+import ancientWootanDefenderSprite from "../assets/sprites/20277.gif";
+
+import el1A17TSprite from "../assets/sprites/20340.gif";
+import cor1 from "../assets/maps/1@cor.webp";
+
+import miguelSprite from "../assets/sprites/20346.gif";
+import osA1 from "../assets/maps/1@os_a.webp";
+
+import r4885BestiaSprite from "../assets/sprites/20381.gif";
+import spRudus2 from "../assets/maps/sp_rudus2.webp";
+
+import rigidMuspellskollSprite from "../assets/sprites/20419.gif";
+import magDun03 from "../assets/maps/mag_dun03.webp";
+
+import corruptedSpiderQueenSprite from "../assets/sprites/20421.gif";
+import glCas01_ from "../assets/maps/gl_cas01_.webp";
+
+import corruptedDarkLordSprite from "../assets/sprites/20422.gif";
+
+import jewelUngoliantSprite from "../assets/sprites/20601.gif";
+import einDun03 from "../assets/maps/ein_dun03.webp";
+
+import redPepperSprite from "../assets/sprites/20620.gif";
+import herbs1 from "../assets/maps/1@herbs.webp";
+
+import seniorRedPepperSprite from "../assets/sprites/20621.gif";
+
+import sweetySprite from "../assets/sprites/20642.gif";
+import bamq1 from "../assets/maps/1@bamq.webp";
+
+import bossMeowSprite from "../assets/sprites/20648.gif";
+import baLost from "../assets/maps/ba_lost.webp";
+
+import pitayaBossSprite from "../assets/sprites/20659.gif";
+import lost1 from "../assets/maps/1@lost.webp";
+
+import silvaPapiliaSprite from "../assets/sprites/20667.gif";
+import ghg1 from "../assets/maps/1@ghg.webp";
+
+import granPapiliaSprite from "../assets/sprites/20668.gif";
+
+import deepSeaKrakenSprite from "../assets/sprites/20811.gif";
+import izD04_i from "../assets/maps/iz_d04_i.webp";
+
+import deepSeaWitchSprite from "../assets/sprites/20843.gif";
+import izD05_i from "../assets/maps/iz_d05_i.webp";
+
+import theOneSprite from "../assets/sprites/20928.gif";
+import amicitia2 from "../assets/maps/amicitia2.webp";
+
+import r001BestiaSprite from "../assets/sprites/20934.gif";
+import spRudus4 from "../assets/maps/sp_rudus4.webp";
+
+import deathWitchSprite from "../assets/sprites/20943.gif";
+import nifDun02 from "../assets/maps/nif_dun02.webp";
+
+import burningFangSprite from "../assets/sprites/21301.gif";
+import ozDun02 from "../assets/maps/oz_dun02.webp";
+
+import silentMayaSprite from "../assets/sprites/21395.gif";
+import antD02_i from "../assets/maps/ant_d02_i.webp";
+
 const mvps = [
     {
         id: 1038,
@@ -1708,6 +1776,404 @@ const mvps = [
                 respawnMin: null,
                 respawnMax: null,
                 mapImage: tnm3_1
+            }
+        ]
+    },
+    {
+        id: 20260,
+        name: "Shining Teddy Bear",
+        sprite: shiningTeddyBearSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20260",
+        specialCondition: "Spawn after defeating 2500 Teddy Bears on map.",
+        spawns: [
+            {
+                map: "ein_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: einDun02b
+            }
+        ]
+    },
+    {
+        id: 20273,
+        name: "Ancient Tao Gunka",
+        sprite: ancientTaoGunkaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20273",
+        specialCondition: "Spawn after defeating 1500 mobs on map.",
+        spawns: [
+            {
+                map: "com_d02_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: comD02_i
+            }
+        ]
+    },
+    {
+        id: 20277,
+        name: "Ancient Wootan Defender",
+        sprite: ancientWootanDefenderSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20277",
+        specialCondition: "Spawn after defeating 1500 mobs on map.",
+        spawns: [
+            {
+                map: "com_d02_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: comD02_i
+            }
+        ]
+    },
+    {
+        id: 20340,
+        name: "EL1-A17T",
+        sprite: el1A17TSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20340",
+        specialCondition: "Cor Memorial (1@cor)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@cor",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: cor1
+            }
+        ]
+    },
+    {
+        id: 20346,
+        name: "Miguel",
+        sprite: miguelSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20346",
+        specialCondition: "Os Occupation (1@os_a)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@os_a",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: osA1
+            }
+        ]
+    },
+    {
+        id: 20381,
+        name: "R48-85-Bestia",
+        sprite: r4885BestiaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20381",
+        spawns: [
+            {
+                map: "sp_rudus2",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 370,
+                mapImage: spRudus2
+            }
+        ]
+    },
+    {
+        id: 20419,
+        name: "Rigid Muspellskoll",
+        sprite: rigidMuspellskollSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20419",
+        spawns: [
+            {
+                map: "mag_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: magDun03
+            }
+        ]
+    },
+    {
+        id: 20421,
+        name: "Corrupted Spider Queen",
+        sprite: corruptedSpiderQueenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20421",
+        spawns: [
+            {
+                map: "gl_cas01_",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: glCas01_
+            }
+        ]
+    },
+    {
+        id: 20422,
+        name: "Corrupted Dark Lord",
+        sprite: corruptedDarkLordSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20422",
+        spawns: [
+            {
+                map: "gl_cas01_",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: glCas01_
+            }
+        ]
+    },
+    {
+        id: 20601,
+        name: "Jewel Ungoliant",
+        sprite: jewelUngoliantSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20601",
+        spawns: [
+            {
+                map: "ein_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: einDun03
+            }
+        ]
+    },
+    {
+        id: 20620,
+        name: "Red Pepper",
+        sprite: redPepperSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20620",
+        specialCondition: "Hidden Flower Garden (1@herbs)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@herbs",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: herbs1
+            }
+        ]
+    },
+    {
+        id: 20621,
+        name: "Senior Red Pepper",
+        sprite: seniorRedPepperSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20621",
+        specialCondition: "Hidden Garden - Hard Mode (1@herbs(hard))\n*Instance Map",
+        spawns: [
+            {
+                map: "1@herbs",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: herbs1
+            }
+        ]
+    },
+    {
+        id: 20642,
+        name: "Sweety",
+        sprite: sweetySprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20642",
+        specialCondition: "Twilight Garden - Unfair Dock (1@bamq)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@bamq",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: bamq1
+            }
+        ]
+    },
+    {
+        id: 20648,
+        name: "Boss Meow",
+        sprite: bossMeowSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20648",
+        spawns: [
+            {
+                map: "ba_lost",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: baLost
+            }
+        ]
+    },
+    {
+        id: 20659,
+        name: "Pitaya Boss",
+        sprite: pitayaBossSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20659",
+        specialCondition: "Farm of Forgotten Time (1@lost)\n*Instance Map",
+        spawns: [
+            {
+                map: "1@lost",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: lost1
+            }
+        ]
+    },
+    {
+        id: 20667,
+        name: "Silva Papilia",
+        sprite: silvaPapiliaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20667",
+        specialCondition: "Water Garden - Orthos Aqua (1@ghg)",
+        spawns: [
+            {
+                map: "1@ghg",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: ghg1
+            }
+        ]
+    },
+    {
+        id: 20668,
+        name: "Gran Papilia",
+        sprite: granPapiliaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20668",
+        specialCondition: "Water Garden - Hard Mode (1@ghg(hard))\n*Instance Map",
+        spawns: [
+            {
+                map: "1@ghg",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: ghg1
+            }
+        ]
+    },
+    {
+        id: 20811,
+        name: "Deep Sea Kraken",
+        sprite: deepSeaKrakenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20811",
+        specialCondition: "Spawn after defeating 1500 mobs on map.",
+        spawns: [
+            {
+                map: "iz_d04_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: izD04_i
+            }
+        ]
+    },
+    {
+        id: 20843,
+        name: "Deep Sea Witch",
+        sprite: deepSeaWitchSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20843",
+        specialCondition: "Spawn after defeating 1500 mobs on map.",
+        spawns: [
+            {
+                map: "iz_d05_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: izD05_i
+            }
+        ]
+    },
+    {
+        id: 20928,
+        name: "The One",
+        sprite: theOneSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20928",
+        spawns: [
+            {
+                map: "amicitia2",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 370,
+                mapImage: amicitia2
+            }
+        ]
+    },
+    {
+        id: 20934,
+        name: "R001-Bestia",
+        sprite: r001BestiaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20934",
+        spawns: [
+            {
+                map: "sp_rudus4",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 370,
+                mapImage: spRudus4
+            }
+        ]
+    },
+    {
+        id: 20943,
+        name: "Death Witch",
+        sprite: deathWitchSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20943",
+        spawns: [
+            {
+                map: "nif_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 370,
+                mapImage: nifDun02
+            }
+        ]
+    },
+    {
+        id: 21301,
+        name: "Burning Fang",
+        sprite: burningFangSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/21301",
+        spawns: [
+            {
+                map: "oz_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 370,
+                mapImage: ozDun02
+            }
+        ]
+    },
+    {
+        id: 21395,
+        name: "Silent Maya",
+        sprite: silentMayaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/21395",
+        specialCondition: "Spawn after defeating 3000 mobs on map.",
+        spawns: [
+            {
+                map: "ant_d02_i",
+                mapType: "instance",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 120,
+                mapImage: antD02_i
             }
         ]
     },

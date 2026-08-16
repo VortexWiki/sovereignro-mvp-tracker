@@ -167,7 +167,7 @@ export default function MonsterList({ isTracked, isFavorited, addMvp, addToFavor
                                             aria-label="Note"
                                             data-tooltip={monster.note ? "Edit note" : "Add note"}
                                         >
-                                            <StickyNote size={16} fill={monster.note ? "currentColor" : "none"} />
+                                            <StickyNote size={16} />
                                         </button>
 
                                         <button

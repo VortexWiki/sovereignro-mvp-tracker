@@ -300,7 +300,7 @@ export default function TimerCard({ mvp, onUpdateMvp, onSaveNote, onStop, onTogg
                     aria-label="Note"
                     data-tooltip={mvp.note ? "Edit note" : "Add note"}
                 >
-                    <StickyNote size={18} fill={mvp.note ? "currentColor" : "none"} />
+                    <StickyNote size={18} />
                 </button>
 
                 <button

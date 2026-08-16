@@ -14,7 +14,6 @@ const minibosses = [
         name: "Angeling",
         sprite: angelingSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/1096/angeling",
-        cardEffect: "The user's property becomes **Level 1 Holy**.",
         spawns: [
             {
                 map: "pay_fild04",

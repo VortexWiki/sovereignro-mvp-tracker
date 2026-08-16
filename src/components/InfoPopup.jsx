@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
 import MonsterNameLink from "./MonsterNameLink";
 
-// Renders cardEffect/specialCondition text, honoring a simple **bold**
-// markup (easy to type in the source spreadsheet) — everything else is
-// plain text, line breaks handled by the container's white-space: pre-wrap.
-// Not a full markdown parser on purpose: this only ever needs bold spans.
+// Renders specialCondition text, honoring a simple **bold** markup (easy to
+// type in the source spreadsheet) — everything else is plain text, line
+// breaks handled by the container's white-space: pre-wrap. Not a full
+// markdown parser on purpose: this only ever needs bold spans.
 function renderWithBold(text) {
     const parts = text.split(/(\*\*[^*]+\*\*)/g);
     return parts.map((part, i) => {
@@ -20,14 +20,11 @@ function renderWithBold(text) {
 
 // Popup for extra static info about a MVP that isn't a simple respawn
 // timer — e.g. some MVPs only spawn after a kill-count threshold on their
-// map, or the map itself has a special mechanic/effect. Two tabs: "Card
-// Effect" and "Special Condition". Content comes from the MVP's data entry
-// (cardEffect / specialCondition fields) — this popup is read-only, it
-// doesn't let the user edit those. Same closing behavior as the other
+// map, or the map itself has a special mechanic/effect. Content comes from
+// the MVP's data entry (specialCondition field) — this popup is read-only,
+// it doesn't let the user edit that. Same closing behavior as the other
 // popups: Escape or the X button only.
 export default function InfoPopup({ mvp, onClose }) {
-    const [tab, setTab] = useState("cardEffect");
-
     useEffect(() => {
         function handleKeyDown(e) {
             if (e.key === "Escape") {
@@ -43,7 +40,6 @@ export default function InfoPopup({ mvp, onClose }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const cardEffect = mvp.cardEffect || "No card effect info yet.";
     const specialCondition = mvp.specialCondition || "No special spawn condition yet.";
 
     const popup = (
@@ -67,29 +63,9 @@ export default function InfoPopup({ mvp, onClose }) {
 
                 </div>
 
-                <div className="info-popup-tabs">
-
-                    <button
-                        type="button"
-                        className={`info-popup-tab${tab === "cardEffect" ? " info-popup-tab--active" : ""}`}
-                        onClick={() => setTab("cardEffect")}
-                    >
-                        Card Effect
-                    </button>
-
-                    <button
-                        type="button"
-                        className={`info-popup-tab${tab === "specialCondition" ? " info-popup-tab--active" : ""}`}
-                        onClick={() => setTab("specialCondition")}
-                    >
-                        Special Condition
-                    </button>
-
-                </div>
-
                 <div className="info-popup-body">
 
-                    {renderWithBold(tab === "cardEffect" ? cardEffect : specialCondition)}
+                    {renderWithBold(specialCondition)}
 
                 </div>
 

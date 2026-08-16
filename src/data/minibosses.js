@@ -345,7 +345,7 @@ const minibosses = [
         name: "Lora",
         sprite: loraSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2250",
-        specialCondition: "Hall of the Abyss: Warrior road",
+        specialCondition: "Hall of the Abyss : Warrior road",
         spawns: [
             {
                 map: "gld2_prt",

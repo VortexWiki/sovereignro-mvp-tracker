@@ -1200,7 +1200,7 @@ const mvps = [
         name: "Lost Dragon",
         sprite: lostDragonSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2131",
-        specialCondition: "The Hazy Maze Forest Instance Map",
+        specialCondition: "The Hazy Maze Forest  Instance Map",
         spawns: [
             {
                 map: "1@mist",
@@ -1233,7 +1233,7 @@ const mvps = [
         name: "Gold Queen Scaraba",
         sprite: goldQueenScarabaSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2165",
-        specialCondition: "Quest needed: Hall's admission requires Scaraba Perfume. Curious Sapha (dic_dun01 266/113) sells perfume in Kamidal Tunnel.\nEntrance gatekeeper is Dirty Vigilante (dic_dun0 284/102), next to the normal Scaraba gatekeeper.",
+        specialCondition: "Quest needed Hall's admission requires Scaraba Perfume. Curious Sapha (dic_dun01 266/113) sell perfume in Kamidal Tunnel.\nEntrance gatekeeper are Dirty Vigilante (dic_dun0 284/102), he stay next to gatekeeper of normal scaraba.",
         spawns: [
             {
                 map: "dic_dun03",
@@ -1250,7 +1250,7 @@ const mvps = [
         name: "Dark Coelacanth",
         sprite: darkCoelacanthSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2187",
-        specialCondition: "Drain 1 (1@pump) Instance Map",
+        specialCondition: "Drain 1 (1@pump)\n*Instance Map",
         spawns: [
             {
                 map: "1@pump",
@@ -1267,7 +1267,7 @@ const mvps = [
         name: "Giant Octopus",
         sprite: giantOctopusSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2194",
-        specialCondition: "Octopus Cave (1@cash) Instance Map",
+        specialCondition: "Octopus Cave (1@cash)\n*Instance Map",
         spawns: [
             {
                 map: "1@cash",
@@ -1412,7 +1412,7 @@ const mvps = [
         name: "Pyuriel",
         sprite: pyurielSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2249",
-        specialCondition: "Hall of the Abyss: Warrior road",
+        specialCondition: "Hall of the Abyss : Warrior road",
         spawns: [
             {
                 map: "gld2_prt",
@@ -1429,7 +1429,7 @@ const mvps = [
         name: "Gioia",
         sprite: gioiaSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2251",
-        specialCondition: "Hall of the Abyss: Tear of Hero",
+        specialCondition: "Hall of the Abyss : Tear of Hero",
         spawns: [
             {
                 map: "gld2_ald",
@@ -1446,7 +1446,7 @@ const mvps = [
         name: "Elvira",
         sprite: elviraSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2252",
-        specialCondition: "Hall of the Abyss: Tear of Hero",
+        specialCondition: "Hall of the Abyss : Tear of Hero",
         spawns: [
             {
                 map: "gld2_ald",
@@ -1463,7 +1463,7 @@ const mvps = [
         name: "Daehyon",
         sprite: daehyonSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2253",
-        specialCondition: "Hall of the Abyss: Wind of beginning",
+        specialCondition: "Hall of the Abyss : Wind of beginning",
         spawns: [
             {
                 map: "gld2_pay",
@@ -1480,7 +1480,7 @@ const mvps = [
         name: "Soheon",
         sprite: soheonSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2254",
-        specialCondition: "Hall of the Abyss: Wind of beginning",
+        specialCondition: "Hall of the Abyss : Wind of beginning",
         spawns: [
             {
                 map: "gld2_pay",
@@ -1497,7 +1497,7 @@ const mvps = [
         name: "Kades",
         sprite: kadesSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2255",
-        specialCondition: "Hall of the Abyss: Hill of death",
+        specialCondition: "Hall of the Abyss : Hill of death",
         spawns: [
             {
                 map: "gld2_gef",
@@ -1514,7 +1514,7 @@ const mvps = [
         name: "Rudo",
         sprite: rudoSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2256",
-        specialCondition: "Hall of the Abyss: Hill of death",
+        specialCondition: "Hall of the Abyss : Hill of death",
         spawns: [
             {
                 map: "gld2_gef",
@@ -1531,7 +1531,7 @@ const mvps = [
         name: "Buwaya",
         sprite: buwayaSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2319",
-        specialCondition: "Buwaya Cave (1@ma_c) Instance Map",
+        specialCondition: "Buwaya Cave (1@ma_c)\n*Instance Map",
         spawns: [
             {
                 map: "1@ma_c",
@@ -1548,7 +1548,7 @@ const mvps = [
         name: "Bangungot",
         sprite: bangungotSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2327",
-        specialCondition: "Malaya Bangungot Hospital 2F (1@ma_h) Instance Map",
+        specialCondition: "Malaya Bangungot Hospital 2F (1@ma_h)\n*Instance Map",
         spawns: [
             {
                 map: "1@ma_h",
@@ -1615,7 +1615,7 @@ const mvps = [
         name: "Corrupted Soul",
         sprite: corruptedSoulSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2475",
-        specialCondition: "Old Glast Heim Chivalry 2F (1@gl_k) Instance Map",
+        specialCondition: "Old Glast Heim Chivalry 2F (1@gl_k)\n*Instance Map",
         spawns: [
             {
                 map: "1@gl_k",
@@ -1632,7 +1632,7 @@ const mvps = [
         name: "Amdarais",
         sprite: amdaraisSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2476",
-        specialCondition: "Old Glast Heim Chivalry 1F (2@gl_k) Instance Map",
+        specialCondition: "Old Glast Heim Chivalry 1F (2@gl_k)\n*Instance Map",
         spawns: [
             {
                 map: "2@gl_k",
@@ -1665,7 +1665,7 @@ const mvps = [
         name: "Faceworm Queen",
         sprite: facewormQueenSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2529",
-        specialCondition: "Faceworm's Nest (1@face) Instance Map",
+        specialCondition: "Faceworm's Nest (1@face)\n*Instance Map",
         spawns: [
             {
                 map: "1@face",
@@ -1682,7 +1682,7 @@ const mvps = [
         name: "Geffen Fenrir",
         sprite: geffenFenrirSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2564",
-        specialCondition: "Geffen Magic Tournament (1@ge_st) Instance Map",
+        specialCondition: "Geffen Magic Tournament (1@ge_st)\n*Instance Map",
         spawns: [
             {
                 map: "1@ge_st",
@@ -1699,7 +1699,7 @@ const mvps = [
         name: "Evil Fanatics",
         sprite: evilFanaticsSprite,
         divinePrideUrl: "https://www.divine-pride.net/database/monster/2942",
-        specialCondition: "Morroc Castle - Basement (1@tnm3) Instance Map",
+        specialCondition: "Morroc Castle - Basement (1@tnm3)\n*Instance Map",
         spawns: [
             {
                 map: "1@tnm3",

@@ -29,6 +29,16 @@ import ghostringSprite from "../assets/sprites/1120.gif";
 import gldDun04 from "../assets/maps/gld_dun04.webp";
 import treasure02 from "../assets/maps/treasure02.webp";
 
+import darkIllusionSprite from "../assets/sprites/1302.gif";
+import glChyard from "../assets/maps/gl_chyard.webp";
+import gldDun04_2 from "../assets/maps/gld_dun04_2.webp";
+import gld2Gef from "../assets/maps/gld2_gef.webp";
+
+import arcAngelingSprite from "../assets/sprites/1388.gif";
+import yunoFild04 from "../assets/maps/yuno_fild04.webp";
+
+import devilingSprite from "../assets/sprites/1582.gif";
+
 const minibosses = [
     {
         id: 1089,
@@ -219,6 +229,78 @@ const minibosses = [
                 respawnMin: 33,
                 respawnMax: 53,
                 mapImage: treasure02
+            }
+        ]
+    },
+    {
+        id: 1302,
+        name: "Dark Illusion",
+        sprite: darkIllusionSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1302",
+        spawns: [
+            {
+                map: "gl_chyard",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: glChyard
+            },
+            {
+                map: "gld_dun04_2",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 20,
+                respawnMax: 20,
+                mapImage: gldDun04_2
+            },
+            {
+                map: "gld2_gef",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 20,
+                respawnMax: 20,
+                mapImage: gld2Gef
+            }
+        ]
+    },
+    {
+        id: 1388,
+        name: "Arc Angeling",
+        sprite: arcAngelingSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1388",
+        spawns: [
+            {
+                map: "yuno_fild04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: yunoFild04
+            }
+        ]
+    },
+    {
+        id: 1582,
+        name: "Deviling",
+        sprite: devilingSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1582",
+        spawns: [
+            {
+                map: "pay_fild04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 180,
+                mapImage: payFild04
+            },
+            {
+                map: "yuno_fild03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 90,
+                mapImage: yunoFild03
             }
         ]
     }

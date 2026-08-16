@@ -78,6 +78,72 @@ import inSphinx5 from "../assets/maps/in_sphinx5.webp";
 import phreeoniSprite from "../assets/sprites/1159.gif";
 import mocFild17 from "../assets/maps/moc_fild17.webp";
 
+import orcLordSprite from "../assets/sprites/1190.gif";
+import gefFild10 from "../assets/maps/gef_fild10.webp";
+
+import stormyKnightSprite from "../assets/sprites/1251.gif";
+import xmasDun02 from "../assets/maps/xmas_dun02.webp";
+
+import hatiiGarmSprite from "../assets/sprites/1252.gif";
+import xmasFild01 from "../assets/maps/xmas_fild01.webp";
+
+import darkLordSprite from "../assets/sprites/1272.gif";
+import glChyard from "../assets/maps/gl_chyard.webp";
+import gldDun04_2 from "../assets/maps/gld_dun04_2.webp";
+
+import turtleGeneralSprite from "../assets/sprites/1312.gif";
+import turDun04 from "../assets/maps/tur_dun04.webp";
+
+import draculaSprite from "../assets/sprites/1389.gif";
+import gefDun01 from "../assets/maps/gef_dun01.webp";
+
+import evilSnakeLordSprite from "../assets/sprites/1418.gif";
+import gonDun03 from "../assets/maps/gon_dun03.webp";
+
+import incantationSamuraiSprite from "../assets/sprites/1492.gif";
+import amaDun03 from "../assets/maps/ama_dun03.webp";
+
+import amonRaSprite from "../assets/sprites/1511.gif";
+import mocPryd06 from "../assets/maps/moc_pryd06.webp";
+
+import taoGunkaSprite from "../assets/sprites/1583.gif";
+import beachDun from "../assets/maps/beach_dun.webp";
+
+import rsx0806Sprite from "../assets/sprites/1623.gif";
+import einDun02 from "../assets/maps/ein_dun02.webp";
+
+import whiteLadySprite from "../assets/sprites/1630.gif";
+import louDun03 from "../assets/maps/lou_dun03.webp";
+
+import lordKnightSeyrenSprite from "../assets/sprites/1646.gif";
+import assassinCrossEremesSprite from "../assets/sprites/1647.gif";
+import whitesmithHowardSprite from "../assets/sprites/1648.gif";
+import highPriestMargarethaSprite from "../assets/sprites/1649.gif";
+import sniperCecilSprite from "../assets/sprites/1650.gif";
+import highWizardKathryneSprite from "../assets/sprites/1651.gif";
+import lhzDun03 from "../assets/maps/lhz_dun03.webp";
+
+import egnigemCeniaSprite from "../assets/sprites/1658.gif";
+import lhzDun02 from "../assets/maps/lhz_dun02.webp";
+
+import vesperSprite from "../assets/sprites/1685.gif";
+import jupeCore from "../assets/maps/jupe_core.webp";
+
+import ladyTaneeSprite from "../assets/sprites/1688.gif";
+import ayoDun02 from "../assets/maps/ayo_dun02.webp";
+
+import thanatosPhantomSprite from "../assets/sprites/1708.gif";
+import thanaBoss from "../assets/maps/thana_boss.webp";
+
+import detaleSprite from "../assets/sprites/1719.gif";
+import abyss03 from "../assets/maps/abyss_03.webp";
+
+import kielD01Sprite from "../assets/sprites/1734.gif";
+import khDun02 from "../assets/maps/kh_dun02.webp";
+
+import valkyrieRandgrisSprite from "../assets/sprites/1751.gif";
+import odinTem03 from "../assets/maps/odin_tem03.webp";
+
 const mvps = [
     {
         id: 1038,
@@ -332,6 +398,415 @@ const mvps = [
                 respawnMin: 120,
                 respawnMax: 130,
                 mapImage: mocFild17
+            }
+        ]
+    },
+    {
+        id: 1190,
+        name: "Orc Lord",
+        sprite: orcLordSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1190",
+        spawns: [
+            {
+                map: "gef_fild10",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: gefFild10
+            }
+        ]
+    },
+    {
+        id: 1251,
+        name: "Stormy Knight",
+        sprite: stormyKnightSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1251",
+        spawns: [
+            {
+                map: "xmas_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: xmasDun02
+            }
+        ]
+    },
+    {
+        id: 1252,
+        name: "Hatii-Garm",
+        sprite: hatiiGarmSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1252",
+        spawns: [
+            {
+                map: "xmas_fild01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: xmasFild01
+            }
+        ]
+    },
+    {
+        id: 1272,
+        name: "Dark Lord",
+        sprite: darkLordSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1272",
+        spawns: [
+            {
+                map: "gl_chyard",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: glChyard
+            },
+            {
+                map: "gld_dun04_2",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gldDun04_2
+            }
+        ]
+    },
+    {
+        id: 1312,
+        name: "Turtle General",
+        sprite: turtleGeneralSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1312",
+        spawns: [
+            {
+                map: "tur_dun04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: turDun04
+            }
+        ]
+    },
+    {
+        id: 1389,
+        name: "Dracula",
+        sprite: draculaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1389",
+        spawns: [
+            {
+                map: "gef_dun01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: gefDun01
+            }
+        ]
+    },
+    {
+        id: 1418,
+        name: "Evil Snake Lord",
+        sprite: evilSnakeLordSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1418",
+        spawns: [
+            {
+                map: "gon_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 94,
+                respawnMax: 104,
+                mapImage: gonDun03
+            }
+        ]
+    },
+    {
+        id: 1492,
+        name: "Incantation Samurai",
+        sprite: incantationSamuraiSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1492",
+        spawns: [
+            {
+                map: "ama_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 91,
+                respawnMax: 101,
+                mapImage: amaDun03
+            }
+        ]
+    },
+    {
+        id: 1511,
+        name: "Amon Ra",
+        sprite: amonRaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1511",
+        spawns: [
+            {
+                map: "moc_pryd06",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 70,
+                mapImage: mocPryd06
+            }
+        ]
+    },
+    {
+        id: 1583,
+        name: "Tao Gunka",
+        sprite: taoGunkaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1583",
+        spawns: [
+            {
+                map: "beach_dun",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 310,
+                mapImage: beachDun
+            }
+        ]
+    },
+    {
+        id: 1623,
+        name: "RSX-0806",
+        sprite: rsx0806Sprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1623",
+        spawns: [
+            {
+                map: "ein_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 125,
+                respawnMax: 135,
+                mapImage: einDun02
+            }
+        ]
+    },
+    {
+        id: 1630,
+        name: "White Lady",
+        sprite: whiteLadySprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1630",
+        spawns: [
+            {
+                map: "lou_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 117,
+                respawnMax: 127,
+                mapImage: louDun03
+            }
+        ]
+    },
+    {
+        id: 1646,
+        name: "Lord Knight Seyren",
+        sprite: lordKnightSeyrenSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1646",
+        spawns: [
+            {
+                map: "lhz_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun03
+            }
+        ]
+    },
+    {
+        id: 1647,
+        name: "Assassin Cross Eremes",
+        sprite: assassinCrossEremesSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1647",
+        spawns: [
+            {
+                map: "lhz_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun03
+            }
+        ]
+    },
+    {
+        id: 1648,
+        name: "Whitesmith Howard",
+        sprite: whitesmithHowardSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1648",
+        spawns: [
+            {
+                map: "lhz_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun03
+            }
+        ]
+    },
+    {
+        id: 1649,
+        name: "High Priest Margaretha",
+        sprite: highPriestMargarethaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1649",
+        spawns: [
+            {
+                map: "lhz_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun03
+            }
+        ]
+    },
+    {
+        id: 1650,
+        name: "Sniper Cecil",
+        sprite: sniperCecilSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1650",
+        spawns: [
+            {
+                map: "lhz_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun03
+            }
+        ]
+    },
+    {
+        id: 1651,
+        name: "High Wizard Kathryne",
+        sprite: highWizardKathryneSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1651",
+        spawns: [
+            {
+                map: "lhz_dun03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 100,
+                respawnMax: 130,
+                mapImage: lhzDun03
+            }
+        ]
+    },
+    {
+        id: 1658,
+        name: "Egnigem Cenia",
+        sprite: egnigemCeniaSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1658",
+        spawns: [
+            {
+                map: "lhz_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: lhzDun02
+            }
+        ]
+    },
+    {
+        id: 1685,
+        name: "Vesper",
+        sprite: vesperSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1685",
+        spawns: [
+            {
+                map: "jupe_core",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: jupeCore
+            }
+        ]
+    },
+    {
+        id: 1688,
+        name: "Lady Tanee",
+        sprite: ladyTaneeSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1688",
+        spawns: [
+            {
+                map: "ayo_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 420,
+                respawnMax: 430,
+                mapImage: ayoDun02
+            }
+        ]
+    },
+    {
+        id: 1708,
+        name: "Thanatos Phantom",
+        sprite: thanatosPhantomSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1708",
+        specialCondition: "The top of The Thanatos Tower.",
+        spawns: [
+            {
+                map: "thana_boss",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: thanaBoss
+            }
+        ]
+    },
+    {
+        id: 1719,
+        name: "Detale",
+        sprite: detaleSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1719",
+        spawns: [
+            {
+                map: "abyss_03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 180,
+                respawnMax: 190,
+                mapImage: abyss03
+            }
+        ]
+    },
+    {
+        id: 1734,
+        name: "Kiel D-01",
+        sprite: kielD01Sprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1734",
+        spawns: [
+            {
+                map: "kh_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 130,
+                mapImage: khDun02
+            }
+        ]
+    },
+    {
+        id: 1751,
+        name: "Valkyrie Randgris",
+        sprite: valkyrieRandgrisSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1751",
+        spawns: [
+            {
+                map: "odin_tem03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: odinTem03
             }
         ]
     },

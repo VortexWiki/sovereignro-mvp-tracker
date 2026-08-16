@@ -12,6 +12,18 @@ body,
     padding: 0;
 }
 
+html,
+body {
+    /* The MVP/mini-boss badge images sit at a negative offset
+       (position: absolute, left: -14px/-16px) so they visually hang off
+       the corner of a card — by design. Without this, that negative
+       offset (or any other minor sub-pixel overflow from the grid layout)
+       could push a horizontal scrollbar onto the whole page instead of
+       just clipping invisibly, which looked like a stray empty scroll bar
+       with nothing to actually scroll to. */
+    overflow-x: hidden;
+}
+
 body {
     background: var(--bg);
     color: var(--text);

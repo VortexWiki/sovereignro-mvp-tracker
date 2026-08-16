@@ -13,7 +13,7 @@ import {
 
 import { getPrimarySpawn } from "../utils/maps";
 import { getTimerStatus, getSecondsRemaining, formatClock, setMinutesRemaining, TIMER_STATUS_LABEL } from "../utils/timer";
-import { triggerSpawnAlert } from "../utils/alarm";
+import { triggerSpawnAlert, triggerSpawnedAlert } from "../utils/alarm";
 import MonsterSprite from "./MonsterSprite";
 import MonsterNameLink from "./MonsterNameLink";
 import MapPopup from "./MapPopup";
@@ -93,6 +93,9 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
         const previousStatus = previousStatusRef.current;
         if (previousStatus !== "spawn_window" && status === "spawn_window" && alarmPrefs) {
             triggerSpawnAlert(mvp.name, spawn ? spawn.map : "Unknown", alarmPrefs, mvp.id);
+        }
+        if (previousStatus !== "spawned" && status === "spawned" && alarmPrefs) {
+            triggerSpawnedAlert(mvp.name, spawn ? spawn.map : "Unknown", alarmPrefs, mvp.id);
         }
         previousStatusRef.current = status;
         // eslint-disable-next-line react-hooks/exhaustive-deps

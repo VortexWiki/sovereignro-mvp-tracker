@@ -123,14 +123,27 @@ export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
                         Possible. Pick a sound below.
                     </p>
 
-                    <label className="settings-toggle-row">
-                        <input
-                            type="checkbox"
-                            checked={prefs.soundEnabled}
-                            onChange={(e) => onUpdatePrefs({ soundEnabled: e.target.checked })}
-                        />
-                        <span>Play a sound on Spawn Possible</span>
-                    </label>
+                    <div className="settings-toggle-grid">
+
+                        <label className="settings-toggle-row">
+                            <input
+                                type="checkbox"
+                                checked={prefs.soundEnabled}
+                                onChange={(e) => onUpdatePrefs({ soundEnabled: e.target.checked })}
+                            />
+                            <span>Play a sound on Spawn Possible</span>
+                        </label>
+
+                        <label className="settings-toggle-row">
+                            <input
+                                type="checkbox"
+                                checked={prefs.soundOnSpawnedEnabled}
+                                onChange={(e) => onUpdatePrefs({ soundOnSpawnedEnabled: e.target.checked })}
+                            />
+                            <span>Also play a sound on Spawned</span>
+                        </label>
+
+                    </div>
 
                     <div className="settings-sound-list">
 

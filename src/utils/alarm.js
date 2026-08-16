@@ -37,8 +37,13 @@ export function getSoundUrl(prefs, soundIdOverride) {
 //
 // soundIdOverride: used for a per-MVP sound (bypasses prefs.soundId)
 // without needing to build a whole fake prefs object at the call site.
-export function playSound(prefs, soundIdOverride) {
-    if (!prefs.soundEnabled) {
+//
+// enabledOverride: lets a caller check a different "is this on" flag than
+// prefs.soundEnabled (e.g. the separate Spawned-sound toggle) without
+// having to fake up a whole prefs object just for this one check.
+export function playSound(prefs, soundIdOverride, enabledOverride) {
+    const enabled = enabledOverride != null ? enabledOverride : prefs.soundEnabled;
+    if (!enabled) {
         return null;
     }
 
@@ -120,4 +125,12 @@ export function triggerSpawnAlert(mvpName, mapName, prefs, mvpId) {
     const override = mvpId != null ? prefs.mvpSoundOverrides?.[mvpId] : null;
     playSound(prefs, override);
     notifySpawnPossible(mvpName, mapName, prefs);
+}
+
+// Called once per genuine transition into "spawned" for a given card.
+// Separate on/off toggle from the Spawn Possible sound (prefs.soundOnSpawnedEnabled)
+// but shares the same sound choice, per-MVP override, volume, and repeat count.
+export function triggerSpawnedAlert(mvpName, mapName, prefs, mvpId) {
+    const override = mvpId != null ? prefs.mvpSoundOverrides?.[mvpId] : null;
+    playSound(prefs, override, prefs.soundOnSpawnedEnabled);
 }

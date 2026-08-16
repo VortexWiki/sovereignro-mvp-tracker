@@ -1184,6 +1184,23 @@
 
 /* --- Settings page --- */
 
+.settings-toggle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 16px;
+    margin: 4px 0 16px;
+}
+
+@media (max-width: 640px) {
+    .settings-toggle-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.settings-toggle-grid .settings-toggle-row {
+    margin: 0;
+}
+
 .settings-toggle-row {
     display: flex;
     align-items: center;

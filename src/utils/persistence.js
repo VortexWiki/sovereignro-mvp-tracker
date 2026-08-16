@@ -186,6 +186,10 @@ export const BUILTIN_SOUNDS = [
 const DEFAULT_PREFERENCES = {
     soundId: "chime",
     soundEnabled: true,
+    // Separate toggle: also play the alert sound on the later transition
+    // into "spawned" (green), not just "spawn_window" (gold). Off by
+    // default — the spawn_window alert is the one most people want.
+    soundOnSpawnedEnabled: false,
     notificationsEnabled: false,
     volume: 0.7,
     // How many times the alarm sound plays back-to-back on Spawn Possible

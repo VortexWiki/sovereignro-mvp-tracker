@@ -406,8 +406,16 @@
     color: var(--success);
 }
 
-.timer-card-clock {
+.timer-card-clock-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin: 12px 0 0;
+}
+
+.timer-card-clock {
+    margin: 0;
     text-align: center;
     font-size: 30px;
     font-weight: 700;
@@ -415,11 +423,53 @@
     letter-spacing: 0.02em;
 }
 
+.timer-card-clock-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    border: 1px solid var(--border-strong);
+    background: transparent;
+    color: var(--text-secondary);
+    transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.timer-card-clock-edit:hover {
+    border-color: var(--gold-border);
+    color: var(--gold);
+}
+
+.timer-card-clock-edit:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.timer-card-clock-edit:disabled:hover {
+    border-color: var(--border-strong);
+    color: var(--text-secondary);
+}
+
 .timer-card-map {
     margin: 12px 0 0;
     text-align: center;
     font-size: 13.5px;
     color: var(--text-secondary);
+    width: 100%;
+}
+
+.timer-card-map--clickable {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.timer-card-map--clickable:hover {
+    color: var(--gold);
+    text-decoration: underline;
 }
 
 .timer-card-respawn {

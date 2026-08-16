@@ -204,16 +204,37 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
                 {TIMER_STATUS_LABEL[status]}
             </p>
 
-            <p className="timer-card-clock">
-                {formatClock(secondsRemaining)}
-            </p>
+            <div className="timer-card-clock-row">
 
-            <p className="timer-card-map">
+                <p className="timer-card-clock">
+                    {formatClock(secondsRemaining)}
+                </p>
+
+                <button
+                    type="button"
+                    className="timer-card-clock-edit"
+                    onClick={() => setEditTimerPopupOpen(true)}
+                    disabled={!hasRespawnData}
+                    aria-label="Edit timer"
+                    data-tooltip="Edit timer"
+                >
+                    <Pencil size={15} />
+                </button>
+
+            </div>
+
+            <button
+                type="button"
+                className="timer-card-map timer-card-map--clickable"
+                onClick={() => setMapPopupOpen(true)}
+                aria-label="Choose last kill map"
+                data-tooltip="Choose last kill map"
+            >
                 📍 {spawn ? spawn.map : "Unknown"}
                 {extraSpawnCount > 0 && (
                     <span className="timer-card-map-extra"> +{extraSpawnCount}</span>
                 )}
-            </p>
+            </button>
 
             <p className="timer-card-respawn">
                 {hasRespawnData
@@ -242,17 +263,6 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
                     data-tooltip="Choose last kill map"
                 >
                     <Map size={18} />
-                </button>
-
-                <button
-                    type="button"
-                    className="timer-card-action"
-                    onClick={() => setEditTimerPopupOpen(true)}
-                    disabled={!hasRespawnData}
-                    aria-label="Edit timer"
-                    data-tooltip="Edit timer"
-                >
-                    <Pencil size={18} />
                 </button>
 
                 <button

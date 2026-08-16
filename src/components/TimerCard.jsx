@@ -305,7 +305,7 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
                     aria-label="More info"
                     data-tooltip="More info"
                 >
-                    <Info size={18} fill={mvp.specialCondition ? "currentColor" : "none"} />
+                    <Info size={18} />
                 </button>
 
             </div>

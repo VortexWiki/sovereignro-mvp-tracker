@@ -267,8 +267,8 @@
 
 .favorite-card-remove {
     position: absolute;
-    right: 8px;
-    bottom: 8px;
+    right: 4px;
+    bottom: 2px;
     display: flex;
     align-items: center;
     justify-content: center;

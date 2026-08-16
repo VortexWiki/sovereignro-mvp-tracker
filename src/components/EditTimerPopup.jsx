@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
+import MonsterNameLink from "./MonsterNameLink";
+
 // Lets the user manually set the countdown's minutes-remaining instead of
 // only being able to log a kill (Restart). Single field, nothing else
 // changes. Same closing behavior as the other popups: Escape or the X
@@ -47,7 +49,7 @@ export default function EditTimerPopup({ mvp, spawn, onSetMinutesRemaining, onCl
 
                 <div className="map-popup-header">
 
-                    <h3 className="map-popup-title">{mvp.name} Timer</h3>
+                    <h3 className="map-popup-title"><MonsterNameLink mvp={mvp} /> Timer</h3>
 
                     <button
                         type="button"

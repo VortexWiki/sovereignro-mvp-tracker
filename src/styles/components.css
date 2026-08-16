@@ -456,6 +456,22 @@
     color: var(--gold);
 }
 
+/* A monster's name, when rendered as a link out to Divine-Pride
+   (MonsterNameLink) instead of a plain span. This class rides alongside
+   whatever layout class each place also passes in, so one rule here covers
+   every usage (TimerCard, FavoriteCard, Monster List, popup titles)
+   instead of needing a separate override per layout class name. */
+.monster-name-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.monster-name-link:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
 /* Tooltip: small label shown above any action button on hover/focus.
    Uses data-tooltip so the button's own text content stays icon-only.
    Generic on [data-tooltip] so it works on timer-card-action, monster-list-

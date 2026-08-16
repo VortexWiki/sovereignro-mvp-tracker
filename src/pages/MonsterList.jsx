@@ -4,6 +4,7 @@ import { Bell, Search, Plus, Star } from "lucide-react";
 import ALL_MONSTERS from "../data/allMonsters";
 import { getPrimarySpawn } from "../utils/maps";
 import MonsterSprite from "../components/MonsterSprite";
+import MonsterNameLink from "../components/MonsterNameLink";
 
 // Full list of every MVP and mini-boss in the tracker's data, one row each,
 // with quick-add buttons — unlike SearchBar (which only surfaces matches
@@ -102,7 +103,7 @@ export default function MonsterList({ isTracked, isFavorited, addMvp, addToFavor
                                     <div className="monster-list-info">
 
                                         <div className="monster-list-name">
-                                            {monster.name}
+                                            <MonsterNameLink mvp={monster} />
                                             {monster.category === "miniboss" && (
                                                 <span className="search-result-badge">Mini-boss</span>
                                             )}

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
+import MonsterNameLink from "./MonsterNameLink";
+
 // Popup for writing a free-form note on a MVP. One note per MVP (not per
 // spawn/map) — it travels with the card regardless of which map is
 // currently displayed. Same closing behavior as MapPopup: Escape or the X
@@ -38,7 +40,7 @@ export default function NotePopup({ mvp, onSaveNote, onClose }) {
 
                 <div className="map-popup-header">
 
-                    <h3 className="map-popup-title">{mvp.name} Note</h3>
+                    <h3 className="map-popup-title"><MonsterNameLink mvp={mvp} /> Note</h3>
 
                     <button
                         type="button"

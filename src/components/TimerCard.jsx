@@ -15,6 +15,7 @@ import { getPrimarySpawn } from "../utils/maps";
 import { getTimerStatus, getSecondsRemaining, formatClock, setMinutesRemaining, TIMER_STATUS_LABEL } from "../utils/timer";
 import { triggerSpawnAlert } from "../utils/alarm";
 import MonsterSprite from "./MonsterSprite";
+import MonsterNameLink from "./MonsterNameLink";
 import MapPopup from "./MapPopup";
 import NotePopup from "./NotePopup";
 import InfoPopup from "./InfoPopup";
@@ -188,11 +189,16 @@ export default function TimerCard({ mvp, onUpdateMvp, onStop, onToggleFavorite, 
 
                 </div>
 
-                <h3 className="timer-card-name">
-                    {mvp.name}
-                </h3>
-
             </div>
+
+            <h3 className="timer-card-name">
+                {/* Outside the drag handle: dnd-kit's pointer-down listener
+                    on the handle would otherwise intercept the click before
+                    the link's own click handler (and even navigation) can
+                    fire, since a drag activation starts on pointerdown, not
+                    on the completed click. */}
+                <MonsterNameLink mvp={mvp} />
+            </h3>
 
             <p className={`timer-card-status timer-card-status--${status}`}>
                 {TIMER_STATUS_LABEL[status]}

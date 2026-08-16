@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { X, ChevronLeft } from "lucide-react";
 
 import lastKillMarkerIcon from "../assets/icons/last-kill-marker.png";
+import MonsterNameLink from "./MonsterNameLink";
 
 // Popup for choosing which spawn map is active on a TimerCard, and for
 // placing a last-kill marker on that map's image.
@@ -75,7 +76,9 @@ export default function MapPopup({ mvp, activeIndex, onSelectMap, onSetMarker, o
 
                     ) : (
 
-                        <h3 className="map-popup-title">{mvp.name}</h3>
+                        <h3 className="map-popup-title">
+                            <MonsterNameLink mvp={mvp} />
+                        </h3>
 
                     )}
 

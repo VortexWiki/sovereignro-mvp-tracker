@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
+import MonsterNameLink from "./MonsterNameLink";
+
 // Popup for extra static info about a MVP that isn't a simple respawn
 // timer — e.g. some MVPs only spawn after a kill-count threshold on their
 // map, or the map itself has a special mechanic/effect. Two tabs: "Card
@@ -38,7 +40,7 @@ export default function InfoPopup({ mvp, onClose }) {
 
                 <div className="map-popup-header">
 
-                    <h3 className="map-popup-title">{mvp.name} Info</h3>
+                    <h3 className="map-popup-title"><MonsterNameLink mvp={mvp} /> Info</h3>
 
                     <button
                         type="button"

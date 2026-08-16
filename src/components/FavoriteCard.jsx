@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 
 import { getPrimarySpawn } from "../utils/maps";
 import MonsterSprite from "./MonsterSprite";
+import MonsterNameLink from "./MonsterNameLink";
 
 // A compact card for a favorited monster — no active timer, just a
 // bookmark. Click it (or drag it) into Active Hunt to start tracking it
@@ -39,6 +40,15 @@ export default function FavoriteCard({ mvp, onMoveToActiveHunt, onRemoveFromFavo
         e.stopPropagation();
     }
 
+    // Same idea for the monster's name link: dnd-kit's drag listener on the
+    // whole card starts on pointerdown, so without stopping it here a click
+    // on the name would be swallowed as a drag attempt before the link's
+    // own click (and MonsterNameLink's stopPropagation, which only guards
+    // against the card's onClick) ever gets a chance to navigate.
+    function handleNameLinkPointerDown(e) {
+        e.stopPropagation();
+    }
+
     return (
 
         <div
@@ -54,7 +64,9 @@ export default function FavoriteCard({ mvp, onMoveToActiveHunt, onRemoveFromFavo
 
             <div className="favorite-card-info">
 
-                <div className="favorite-card-name">{mvp.name}</div>
+                <div onPointerDown={handleNameLinkPointerDown}>
+                    <MonsterNameLink mvp={mvp} className="favorite-card-name" />
+                </div>
 
                 <div className="favorite-card-map">
                     {spawn ? spawn.map : "Unknown"}

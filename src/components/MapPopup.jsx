@@ -145,7 +145,7 @@ export default function MapPopup({ mvp, activeIndex, onSelectMap, onSetMarker, o
 
                     <div className="map-popup-image-wrap">
 
-                        {activeSpawn.mapImage ? (
+                        {activeSpawn && activeSpawn.mapImage ? (
 
                             <div className="map-popup-image-frame" onClick={handleImageClick}>
 
@@ -172,6 +172,10 @@ export default function MapPopup({ mvp, activeIndex, onSelectMap, onSetMarker, o
                         ) : (
 
                             <div className="map-popup-image-missing">
+                                {/* Covers both "this spawn has no map image" and
+                                    "this MVP has no spawns at all" (e.g. a
+                                    no-map/no-timer MVP with spawns: []) — same
+                                    message works for either case. */}
                                 No map image available for this spawn.
                             </div>
 

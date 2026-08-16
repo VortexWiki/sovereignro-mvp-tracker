@@ -32,6 +32,8 @@
 // static data — it's a free-form user note stored on the live tracked item
 // at runtime, not something we source/validate here.
 
+import bringItOnSprite from "../assets/sprites/1502.gif";
+
 import baphometSprite from "../assets/sprites/1039.gif";
 import prtMaze03 from "../assets/maps/prt_maze03.webp";
 import gldDun03 from "../assets/maps/gld_dun03.webp";
@@ -425,6 +427,14 @@ import bijouSprite from "../assets/sprites/3450.gif";
 import mir1 from "../assets/maps/1@mir.webp";
 
 const mvps = [
+    {
+        id: 1502,
+        name: "Bring it on",
+        sprite: bringItOnSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1502",
+        // No map, no timer for this one — spawns intentionally empty.
+        spawns: []
+    },
     {
         id: 1038,
         name: "Osiris",

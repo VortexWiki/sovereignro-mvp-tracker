@@ -53,6 +53,23 @@ import gld2Prt from "../assets/maps/gld2_prt.webp";
 import bomiSprite from "../assets/sprites/3756.gif";
 import gefD01_i from "../assets/maps/gef_d01_i.webp";
 
+import mysteltainnSprite from "../assets/sprites/1203.gif";
+import tower4 from "../assets/maps/4@tower.webp";
+import gefenia01 from "../assets/maps/gefenia01.webp";
+import gefenia02 from "../assets/maps/gefenia02.webp";
+import gefenia03 from "../assets/maps/gefenia03.webp";
+import gefenia04 from "../assets/maps/gefenia04.webp";
+import glCas02 from "../assets/maps/gl_cas02.webp";
+import glCas02_ from "../assets/maps/gl_cas02_.webp";
+import glKnt02 from "../assets/maps/gl_knt02.webp";
+
+import ogretoothSprite from "../assets/sprites/1204.gif";
+
+import executionerSprite from "../assets/sprites/1205.gif";
+
+import gryphonSprite from "../assets/sprites/1259.gif";
+import huFild02 from "../assets/maps/hu_fild02.webp";
+
 const minibosses = [
     {
         id: 1089,
@@ -373,6 +390,206 @@ const minibosses = [
                 respawnMin: 120,
                 respawnMax: 120,
                 mapImage: gefD01_i
+            }
+        ]
+    },
+    {
+        id: 1203,
+        name: "Mysteltainn",
+        sprite: mysteltainnSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1203",
+        spawns: [
+            {
+                map: "4@tower",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: tower4
+            },
+            {
+                map: "gefenia01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 180,
+                respawnMax: 300,
+                mapImage: gefenia01
+            },
+            {
+                map: "gefenia02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia02
+            },
+            {
+                map: "gefenia03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia03
+            },
+            {
+                map: "gefenia04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia04
+            },
+            {
+                map: "gl_cas02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 180,
+                mapImage: glCas02
+            },
+            {
+                map: "gl_cas02_",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 180,
+                mapImage: glCas02_
+            },
+            {
+                map: "gl_knt02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 30,
+                respawnMax: 50,
+                mapImage: glKnt02
+            }
+        ]
+    },
+    {
+        id: 1204,
+        name: "Ogretooth",
+        sprite: ogretoothSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1204",
+        spawns: [
+            {
+                map: "4@tower",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: tower4
+            },
+            {
+                map: "gefenia01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia01
+            },
+            {
+                map: "gefenia02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 180,
+                respawnMax: 300,
+                mapImage: gefenia02
+            },
+            {
+                map: "gefenia03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia03
+            },
+            {
+                map: "gefenia04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia04
+            },
+            {
+                map: "gl_cas02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 120,
+                respawnMax: 180,
+                mapImage: glCas02
+            }
+        ]
+    },
+    {
+        id: 1205,
+        name: "Executioner",
+        sprite: executionerSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1205",
+        spawns: [
+            {
+                map: "4@tower",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: tower4
+            },
+            {
+                map: "gefenia01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia01
+            },
+            {
+                map: "gefenia02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia02
+            },
+            {
+                map: "gefenia03",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 180,
+                respawnMax: 300,
+                mapImage: gefenia03
+            },
+            {
+                map: "gefenia04",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 300,
+                respawnMax: 540,
+                mapImage: gefenia04
+            }
+        ]
+    },
+    {
+        id: 1259,
+        name: "Gryphon",
+        sprite: gryphonSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/1259",
+        spawns: [
+            {
+                map: "4@tower",
+                mapType: "instance",
+                special: null,
+                respawnMin: null,
+                respawnMax: null,
+                mapImage: tower4
+            },
+            {
+                map: "hu_fild02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 60,
+                respawnMax: 60,
+                mapImage: huFild02
             }
         ]
     },

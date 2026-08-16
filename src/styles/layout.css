@@ -22,7 +22,13 @@
     display: flex;
     flex-direction: column;
     gap: 26px;
-    max-width: 1700px;
+    /* Scales with the window instead of capping hard at a fixed width —
+       on a wide/ultra-wide screen the sections (search bar, Favorites,
+       Active Hunt) now stretch to use the available space instead of
+       leaving a large empty gap on the right. Still capped at 2200px so
+       cards don't get absurdly stretched out on a very wide monitor. */
+    width: 100%;
+    max-width: min(96vw, 2200px);
 }
 
 .page-header {

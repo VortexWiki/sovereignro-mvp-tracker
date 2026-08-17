@@ -23,6 +23,7 @@ export default function Dashboard({
     moveToActiveHunt,
     removeFromFavorites,
     removeFromActiveHunt,
+    clearActiveHunt,
     reorderActiveHunt,
     reorderFavorites,
     alarmPrefs,
@@ -148,6 +149,7 @@ export default function Dashboard({
                         moveToFavorites={moveToFavorites}
                         unfavoriteInActiveHunt={unfavoriteInActiveHunt}
                         removeFromActiveHunt={removeFromActiveHunt}
+                        clearActiveHunt={clearActiveHunt}
                         alarmPrefs={alarmPrefs}
                     />
 

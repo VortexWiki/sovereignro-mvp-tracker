@@ -214,6 +214,20 @@ export default function App() {
         setActiveHunt(activeHunt.filter((item) => item.id !== mvpId));
     }
 
+    // "Clear all" on the Active Hunt section header — same end result as
+    // hitting Stop on every card one by one: non-favorited cards just drop
+    // off, favorited ones land back in Favorites instead of disappearing.
+    // The caller (ActiveHunt/Section) is responsible for confirming with
+    // the user first — this just does the state change once confirmed.
+    function clearActiveHunt() {
+        const stillFavorited = activeHunt
+            .filter((item) => item.isFavorite)
+            .map((item) => ({ ...item, isFavorite: true }));
+
+        setFavorites([...favorites, ...stillFavorited]);
+        setActiveHunt([]);
+    }
+
     // Reorders Active Hunt cards after a drag within the grid.
     function reorderActiveHunt(newOrder) {
         setActiveHunt(newOrder);
@@ -291,6 +305,7 @@ export default function App() {
                         moveToActiveHunt={moveToActiveHunt}
                         removeFromFavorites={removeFromFavorites}
                         removeFromActiveHunt={removeFromActiveHunt}
+                        clearActiveHunt={clearActiveHunt}
                         reorderActiveHunt={reorderActiveHunt}
                         reorderFavorites={reorderFavorites}
                         alarmPrefs={prefs}

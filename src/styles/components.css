@@ -10,8 +10,16 @@
 .section-header {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 10px;
     margin-bottom: 16px;
+}
+
+.section-header-main {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
 }
 
 .section-icon {
@@ -30,6 +38,27 @@
     margin: 4px 0 0;
     font-size: 13.5px;
     color: var(--text-secondary);
+}
+
+.section-clear-all {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    padding: 7px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--gold-border);
+    background: var(--gold-soft);
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.section-clear-all:hover {
+    background: var(--gold-soft);
+    border-color: var(--gold);
 }
 
 /* --- Drop zone --- */

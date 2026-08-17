@@ -1,4 +1,4 @@
-import { Target, Plus } from "lucide-react";
+import { Target, Plus, X } from "lucide-react";
 import { useDroppable } from "@dnd-kit/core";
 import { SortableContext, rectSortingStrategy } from "@dnd-kit/sortable";
 
@@ -12,6 +12,7 @@ export default function ActiveHunt({
     moveToFavorites,
     unfavoriteInActiveHunt,
     removeFromActiveHunt,
+    clearActiveHunt,
     alarmPrefs
 }) {
     const { setNodeRef, isOver } = useDroppable({
@@ -37,6 +38,21 @@ export default function ActiveHunt({
         }
     }
 
+    // Confirms before wiping the whole section — same one-click-away
+    // destructive action pattern as Backup's restore confirm, since there's
+    // no undo once these cards are gone (favorited ones land back in
+    // Favorites though, see clearActiveHunt in App.jsx).
+    function handleClearAll() {
+        const confirmed = window.confirm(
+            `Clear all ${activeHunt.length} monster(s) from Active Hunt? ` +
+            `Favorited ones will move back to Favorites, the rest will just be removed. This can't be undone.`
+        );
+
+        if (confirmed) {
+            clearActiveHunt();
+        }
+    }
+
     return (
 
         <Section
@@ -44,6 +60,20 @@ export default function ActiveHunt({
             iconColor="var(--gold)"
             title="Active Hunt"
             subtitle="Drag & Drop your active hunt"
+            action={activeHunt.length > 0 && (
+
+                <button
+                    type="button"
+                    className="section-clear-all"
+                    onClick={handleClearAll}
+                    aria-label="Clear all"
+                    data-tooltip="Clear all"
+                >
+                    <X size={15} />
+                    <span>Clear all</span>
+                </button>
+
+            )}
         >
 
             <div ref={setNodeRef} className="drop-target-area">

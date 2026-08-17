@@ -34,6 +34,11 @@
 
 import bringItOnSprite from "../assets/sprites/1502.gif";
 
+import valkyrieReginleifSprite from "../assets/sprites/20610.gif";
+import odinPast from "../assets/maps/odin_past.png";
+
+import valkyrieIngridSprite from "../assets/sprites/20611.gif";
+
 import baphometSprite from "../assets/sprites/1039.gif";
 import prtMaze03 from "../assets/maps/prt_maze03.webp";
 import gldDun03 from "../assets/maps/gld_dun03.webp";
@@ -427,6 +432,40 @@ import bijouSprite from "../assets/sprites/3450.gif";
 import mir1 from "../assets/maps/1@mir.webp";
 
 const mvps = [
+    {
+        id: 20610,
+        name: "Valkyrie Reginleif",
+        sprite: valkyrieReginleifSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20610",
+        specialCondition: "Spawn requirement: roughly 300 Holy Frus kills\nCooldown: 6 hours",
+        spawns: [
+            {
+                map: "odin_past",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 360,
+                mapImage: odinPast
+            }
+        ]
+    },
+    {
+        id: 20611,
+        name: "Valkyrie Ingrid",
+        sprite: valkyrieIngridSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/20611",
+        specialCondition: "Spawn requirement: roughly 300 Holy Skogul kills\nCooldown: 6 hours",
+        spawns: [
+            {
+                map: "odin_past",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 360,
+                mapImage: odinPast
+            }
+        ]
+    },
     {
         id: 1502,
         name: "Bring it on",

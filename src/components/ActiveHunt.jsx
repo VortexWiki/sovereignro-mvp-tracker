@@ -20,11 +20,17 @@ export default function ActiveHunt({
         data: { zone: "active-hunt" }
     });
 
-    function handleStop(mvp) {
-        if (mvp.isFavorite) {
-            moveToFavorites(mvp.id);
+    // Receives the mvp object straight from TimerCard's handleStopTimer,
+    // already carrying every spawn's killedAt reset to null — NOT the
+    // stale `mvp` closed over from the .map() below, whose timers may not
+    // reflect the reset yet (see the race explained in TimerCard.jsx).
+    // moveToFavorites/removeFromActiveHunt take this object directly rather
+    // than re-reading activeHunt by id, so the reset actually lands.
+    function handleStop(updatedMvp) {
+        if (updatedMvp.isFavorite) {
+            moveToFavorites(updatedMvp);
         } else {
-            removeFromActiveHunt(mvp.id);
+            removeFromActiveHunt(updatedMvp.id);
         }
     }
 
@@ -104,7 +110,7 @@ export default function ActiveHunt({
                                     mvp={mvp}
                                     onUpdateMvp={updateMvp}
                                     onSaveNote={(text) => updateNote(mvp.id, text)}
-                                    onStop={() => handleStop(mvp)}
+                                    onStop={handleStop}
                                     onToggleFavorite={() => handleToggleFavorite(mvp)}
                                     alarmPrefs={alarmPrefs}
                                 />

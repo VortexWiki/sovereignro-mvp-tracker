@@ -126,14 +126,27 @@ export default function TimerCard({ mvp, onUpdateMvp, onSaveNote, onStop, onTogg
     }
 
     function handleStopTimer() {
-        // Reset this card's timer, then let the parent decide where the
-        // card goes: back to Favorites if it's flagged as a favorite, or
-        // dropped entirely if not.
-        updateActiveSpawn({ killedAt: null });
-
-        if (onStop) {
-            onStop();
+        if (!onStop) {
+            return;
         }
+
+        // Reset EVERY spawn's timer (not just the one currently displayed
+        // on this card) back to "Unknown" — a MVP with several maps can
+        // have an independent countdown running on each, and Stop is meant
+        // to fully stop hunting it, not just the map you happen to be
+        // looking at. Last-kill markers are untouched on purpose (that's a
+        // location memory, not a timer).
+        //
+        // The updated mvp is handed straight to onStop rather than going
+        // through onUpdateMvp first — onUpdateMvp's setState is
+        // asynchronous, so if we called it here and then immediately fired
+        // onStop, the parent (ActiveHunt's handleStop -> moveToFavorites)
+        // would still read the OLD activeHunt array (killedAt not yet
+        // cleared) since React hasn't re-rendered between the two calls
+        // yet. Passing the fresh object directly avoids that stale-read
+        // race entirely.
+        const resetSpawns = mvp.spawns.map((s) => ({ ...s, killedAt: null }));
+        onStop({ ...mvp, spawns: resetSpawns });
     }
 
     function handleSelectMap(index) {

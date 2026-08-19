@@ -165,17 +165,26 @@ export default function App() {
         );
     }
 
-    // Moves a monster from Active Hunt to Favorites (drag-and-drop, or the
-    // star button on a not-yet-favorited Active Hunt card). Its timer state
-    // travels with it but Stop already resets killedAt to null before this
-    // is called.
-    function moveToFavorites(mvpId) {
-        const mvp = activeHunt.find((item) => item.id === mvpId);
+    // Moves a monster from Active Hunt to Favorites. Called two ways:
+    // - with just an id (drag-and-drop, or the star button on a
+    //   not-yet-favorited Active Hunt card) — looks the current object up
+    //   in activeHunt, unchanged otherwise.
+    // - with the full, already-updated mvp object (Stop on a favorited
+    //   card, from TimerCard's handleStopTimer via ActiveHunt's handleStop)
+    //   — used AS-IS instead of re-reading activeHunt by id. Re-reading
+    //   here would risk grabbing a stale copy whose spawns still show the
+    //   old killedAt, since the timer reset and this move used to fire as
+    //   two back-to-back setState calls with no re-render in between.
+    function moveToFavorites(mvpOrId) {
+        const mvp = typeof mvpOrId === "object"
+            ? mvpOrId
+            : activeHunt.find((item) => item.id === mvpOrId);
+
         if (!mvp) {
             return;
         }
 
-        setActiveHunt(activeHunt.filter((item) => item.id !== mvpId));
+        setActiveHunt(activeHunt.filter((item) => item.id !== mvp.id));
         setFavorites([...favorites, { ...mvp, isFavorite: true }]);
     }
 
@@ -220,9 +229,17 @@ export default function App() {
     // The caller (ActiveHunt/Section) is responsible for confirming with
     // the user first — this just does the state change once confirmed.
     function clearActiveHunt() {
+        // Same reset as an individual Stop: every spawn's killedAt goes
+        // back to null (timer -> "Unknown") for anything landing in
+        // Favorites here, not just whichever map each card happened to be
+        // displaying. Last-kill markers are left alone.
         const stillFavorited = activeHunt
             .filter((item) => item.isFavorite)
-            .map((item) => ({ ...item, isFavorite: true }));
+            .map((item) => ({
+                ...item,
+                isFavorite: true,
+                spawns: item.spawns.map((s) => ({ ...s, killedAt: null }))
+            }));
 
         setFavorites([...favorites, ...stillFavorited]);
         setActiveHunt([]);

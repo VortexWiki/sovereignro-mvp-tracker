@@ -16,9 +16,48 @@
     border-bottom: 1px solid var(--border-strong);
 }
 
-.sidebar-logo {
-    height: 44px;
-    width: 44px;
+/* Official SovereignRO logo mark + wordmark, matching the real site's
+   markup/CSS exactly (inspected via devtools: .sov-brand-mark /
+   .sov-brand-text / .sov-brand-accent). Font: Sora 800, 1.125rem,
+   letter-spacing -0.02em. Mark: 34x34px, radius 4px, gradient 135deg
+   #E53946 -> #9B1E27. */
+.sr-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sr-logo-mark {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sora", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1.125rem;
+    color: #fff;
+    background: linear-gradient(135deg, #e53946, #9b1e27);
+    border-radius: 4px;
+    box-shadow: 0 4px 18px rgba(229, 57, 70, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.sr-logo-text {
+    font-family: "Sora", system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1.125rem;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.sr-logo-text-white {
+    color: #ffffff;
+}
+
+.sr-logo-text-red {
+    color: #e53946;
 }
 
 .sidebar-nav {

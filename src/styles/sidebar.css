@@ -11,8 +11,9 @@
 .sidebar-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 18px 24px;
+    padding-left: 32px;
     border-bottom: 1px solid var(--border-strong);
 }
 

@@ -3000,8 +3000,8 @@ const mvps = [
                 map: "jor_back3",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 360,
-                respawnMax: 360,
+                respawnMin: 120,
+                respawnMax: 130,
                 mapImage: jorBack3
             }
         ]

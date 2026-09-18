@@ -553,20 +553,20 @@ const mvps = [
         divinePrideUrl: "https://www.divine-pride.net/database/monster/1059",
         spawns: [
             {
-                map: "gld_dun02",
-                mapType: "open_world",
-                special: null,
-                respawnMin: 480,
-                respawnMax: 490,
-                mapImage: gldDun02
-            },
-            {
                 map: "mjolnir_04",
                 mapType: "open_world",
                 special: null,
                 respawnMin: 120,
                 respawnMax: 130,
                 mapImage: mjolnir04
+            },
+            {
+                map: "gld_dun02",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 480,
+                respawnMax: 490,
+                mapImage: gldDun02
             }
         ]
     },

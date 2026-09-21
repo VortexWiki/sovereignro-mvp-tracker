@@ -48,6 +48,8 @@ import ultraLimacinaSprite from "../assets/sprites/21537.gif";
 import jorBack3 from "../assets/maps/jor_back3.webp";
 import sanctuaryCleaningSprite from "../assets/sprites/21980.gif";
 import jorRoot3 from "../assets/maps/jor_root3.png";
+import snowstormAngelSprite from "../assets/sprites/21996.gif";
+import jorBack4 from "../assets/maps/jor_back4.png";
 
 import osirisSprite from "../assets/sprites/1038.gif";
 import mocPryd04 from "../assets/maps/moc_pryd04.webp";
@@ -3021,6 +3023,22 @@ const mvps = [
                 respawnMin: 360,
                 respawnMax: 360,
                 mapImage: jorRoot3
+            }
+        ]
+    },
+    {
+        id: 21996,
+        name: "Snowstorm Angel",
+        sprite: snowstormAngelSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/21996",
+        spawns: [
+            {
+                map: "jor_back4",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 360,
+                mapImage: jorBack4
             }
         ]
     }

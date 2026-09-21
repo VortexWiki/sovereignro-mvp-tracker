@@ -2247,8 +2247,8 @@ const mvps = [
                 map: "amicitia2",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 360,
-                respawnMax: 370,
+                respawnMin: 180,
+                respawnMax: 190,
                 mapImage: amicitia2
             }
         ]
@@ -2279,8 +2279,8 @@ const mvps = [
                 map: "nif_dun02",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 360,
-                respawnMax: 370,
+                respawnMin: 180,
+                respawnMax: 190,
                 mapImage: nifDun02
             }
         ]

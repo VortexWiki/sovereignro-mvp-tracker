@@ -46,6 +46,8 @@ import tower3 from "../assets/maps/3@tower.webp";
 
 import ultraLimacinaSprite from "../assets/sprites/21537.gif";
 import jorBack3 from "../assets/maps/jor_back3.webp";
+import sanctuaryCleaningSprite from "../assets/sprites/21980.gif";
+import jorRoot3 from "../assets/maps/jor_root3.png";
 
 import osirisSprite from "../assets/sprites/1038.gif";
 import mocPryd04 from "../assets/maps/moc_pryd04.webp";
@@ -3003,6 +3005,22 @@ const mvps = [
                 respawnMin: 120,
                 respawnMax: 130,
                 mapImage: jorBack3
+            }
+        ]
+    },
+    {
+        id: 21980,
+        name: "Sanctuary Cleaning",
+        sprite: sanctuaryCleaningSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/21980",
+        spawns: [
+            {
+                map: "jor_root3",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 360,
+                mapImage: jorRoot3
             }
         ]
     }

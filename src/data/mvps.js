@@ -447,8 +447,8 @@ const mvps = [
                 map: "odin_past",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 360,
-                respawnMax: 360,
+                respawnMin: 480,
+                respawnMax: 480,
                 mapImage: odinPast
             }
         ]
@@ -464,8 +464,8 @@ const mvps = [
                 map: "odin_past",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 360,
-                respawnMax: 360,
+                respawnMin: 480,
+                respawnMax: 480,
                 mapImage: odinPast
             }
         ]

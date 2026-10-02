@@ -257,7 +257,13 @@ const DEFAULT_PREFERENCES = {
     // prefs.soundId. Kept alongside the other preferences (per-browser
     // setting) rather than in the tracker data, since it's about "how this
     // browser alerts me", not the monster itself.
-    mvpSoundOverrides: {}
+    mvpSoundOverrides: {},
+    // Off by default: once a spawn reaches "Spawned", the clock normally
+    // just stays at 00:00:00. Turning this on lets it keep counting past
+    // that point and display a negative time instead, showing how long
+    // the spawn window has been open (useful for long respawn MVPs hunted
+    // overnight).
+    negativeTimersEnabled: false
 };
 
 export async function loadPreferences() {

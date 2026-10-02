@@ -34,9 +34,14 @@ export function getTimerStatus(spawn, nowMs) {
     return "spawned";
 }
 
-// Seconds remaining until the next phase boundary (0 once "spawned" is
-// reached, since there's nothing left to count down to).
-export function getSecondsRemaining(spawn, nowMs) {
+// Seconds remaining until the next phase boundary. Once "spawned" is
+// reached there's nothing left to count down to, so this normally returns
+// 0 — unless allowNegative is set, in which case it keeps counting past
+// respawnMax and returns a NEGATIVE number of seconds (how long ago the
+// spawn window fully opened). That's useful for long respawn-time MVPs
+// hunted overnight: coming back to "-02:15:30" tells you the window has
+// been open for over two hours, not just "Spawned" with no further info.
+export function getSecondsRemaining(spawn, nowMs, allowNegative = false) {
     if (!spawn.killedAt || spawn.respawnMin == null || spawn.respawnMax == null) {
         return 0;
     }
@@ -52,17 +57,24 @@ export function getSecondsRemaining(spawn, nowMs) {
         return Math.max(0, Math.round((spawn.respawnMax * 60000 - elapsedMs) / 1000));
     }
 
+    if (status === "spawned" && allowNegative) {
+        return Math.round((spawn.respawnMax * 60000 - elapsedMs) / 1000);
+    }
+
     return 0;
 }
 
 export function formatClock(totalSeconds) {
-    const h = Math.floor(totalSeconds / 3600);
-    const m = Math.floor((totalSeconds % 3600) / 60);
-    const s = Math.floor(totalSeconds % 60);
+    const sign = totalSeconds < 0 ? "-" : "";
+    const abs = Math.abs(totalSeconds);
+
+    const h = Math.floor(abs / 3600);
+    const m = Math.floor((abs % 3600) / 60);
+    const s = Math.floor(abs % 60);
 
     const pad = (n) => String(n).padStart(2, "0");
 
-    return `${pad(h)}:${pad(m)}:${pad(s)}`;
+    return `${sign}${pad(h)}:${pad(m)}:${pad(s)}`;
 }
 
 export const TIMER_STATUS_LABEL = {

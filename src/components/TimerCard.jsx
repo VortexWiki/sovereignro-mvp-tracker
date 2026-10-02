@@ -80,7 +80,7 @@ export default function TimerCard({ mvp, onUpdateMvp, onSaveNote, onStop, onTogg
 
     const now = Date.now();
     const status = getTimerStatus(spawn, now);
-    const secondsRemaining = getSecondsRemaining(spawn, now);
+    const secondsRemaining = getSecondsRemaining(spawn, now, alarmPrefs && alarmPrefs.negativeTimersEnabled);
     const hasRespawnData = spawn && spawn.respawnMin != null && spawn.respawnMax != null;
 
     // Fire the alarm exactly once per transition INTO spawn_window, not on

@@ -209,6 +209,28 @@ export default function Settings({ prefs, onUpdatePrefs, onResetEverything }) {
 
                 <div className="backup-section">
 
+                    <h2 className="backup-section-title">Timers</h2>
+
+                    <p className="backup-section-text">
+                        Once a spawn reaches Spawned, the clock normally
+                        stays at 00:00:00. Turn this on to keep it counting
+                        into negative time instead, showing how long the
+                        spawn window has been open.
+                    </p>
+
+                    <label className="settings-toggle-row">
+                        <input
+                            type="checkbox"
+                            checked={prefs.negativeTimersEnabled}
+                            onChange={(e) => onUpdatePrefs({ negativeTimersEnabled: e.target.checked })}
+                        />
+                        <span>Let timers go negative once Spawned</span>
+                    </label>
+
+                </div>
+
+                <div className="backup-section">
+
                     <h2 className="backup-section-title">Per-MVP sound</h2>
 
                     <p className="backup-section-text">

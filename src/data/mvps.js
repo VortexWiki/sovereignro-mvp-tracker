@@ -50,6 +50,8 @@ import sanctuaryCleaningSprite from "../assets/sprites/21980.gif";
 import jorRoot3 from "../assets/maps/jor_root3.png";
 import snowstormAngelSprite from "../assets/sprites/21996.gif";
 import jorBack4 from "../assets/maps/jor_back4.png";
+import gaiaPolSprite from "../assets/sprites/21950.gif";
+import raPol01 from "../assets/maps/ra_pol01.png";
 
 import osirisSprite from "../assets/sprites/1038.gif";
 import mocPryd04 from "../assets/maps/moc_pryd04.webp";
@@ -3039,6 +3041,22 @@ const mvps = [
                 respawnMin: 120,
                 respawnMax: 130,
                 mapImage: jorBack4
+            }
+        ]
+    },
+    {
+        id: 21950,
+        name: "Gaia Pol",
+        sprite: gaiaPolSprite,
+        divinePrideUrl: "https://www.divine-pride.net/database/monster/21950",
+        spawns: [
+            {
+                map: "ra_pol01",
+                mapType: "open_world",
+                special: null,
+                respawnMin: 360,
+                respawnMax: 360,
+                mapImage: raPol01
             }
         ]
     }

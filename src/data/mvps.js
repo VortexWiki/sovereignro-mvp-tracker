@@ -506,8 +506,8 @@ const mvps = [
                 map: "prt_maze03",
                 mapType: "open_world",
                 special: null,
-                respawnMin: 60,
-                respawnMax: 70,
+                respawnMin: 120,
+                respawnMax: 130,
                 mapImage: prtMaze03
             },
             {
